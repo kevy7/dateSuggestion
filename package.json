@@ -1,11 +1,18 @@
 {
   "name": "datesuggestion",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.7.0",
+    "npm": "6.10.0"
+  },
   "description": "a date suggestion app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.0.0"
+  }
 }
