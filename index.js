@@ -12,7 +12,6 @@ let port = process.env.PORT || 5000;
 //const pg = require("pg");
 
 
-
 //made a comment here
 
 app.get("/", function(req, res){
@@ -24,31 +23,11 @@ app.get("/", function(req, res){
             console.log("err");
         }
         else {
-            console.log(res.rows);
+            console.log(res.rows); //res.rows give us the rows from the table that we searched for
             pool.end(); //This is used to end the query
         }
     })
-
-
-    //How to run a query using postgresSQL
-    /*
-    pg.connect(process.env.DATABASE_URL, function(err, client, done){
-        if(err) {
-            console.log(err);
-        }
-        else {
-            client.query('SELECT * FROM YOURTABLE', function(err, results){
-                if(err){
-                    console.log(err);
-                }
-                else {
-                    console.log(results);
-                    done(); //This is always going to be placed last
-                }
-            })
-        }
-    })
-    */
+  
 })
 
 
