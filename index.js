@@ -17,6 +17,19 @@ let port = process.env.PORT || 5000;
 
 app.get("/", function(req, res){
 
+    //using Pool, from above to run a query
+
+    pool.query("select * from users", (err, res) => {
+        if(err){
+            console.log("err");
+        }
+        else {
+            console.log(res.rows);
+            pool.end(); //This is used to end the query
+        }
+    })
+
+
     //How to run a query using postgresSQL
     /*
     pg.connect(process.env.DATABASE_URL, function(err, client, done){
