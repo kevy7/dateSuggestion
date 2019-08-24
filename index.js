@@ -1,3 +1,9 @@
+/*
+Instead of the date suggestion app, I'm going to use yelp's api and create a food tracker app
+
+An app used to keep track of the dishes that you've always wanted to eat and it will tell you where to find them
+*/
+
 require('dotenv').config(); //In order to gain access to our .env file
 //process.env.YELP_API_KEY
 const express = require("express");
@@ -8,14 +14,9 @@ const pool = new Pool({
   ssl: true
 });
 let port = process.env.PORT || 5000;
-//const pg = require("pg");
 
-
-/*
-Instead of the date suggestion app, I'm going to use yelp's api and create a food tracker app
-
-An app used to keep track of the dishes that you've always wanted to eat and it will tell you where to find them
-*/
+//Place SQL queries here
+const SELECT_ALL_USERS = require("./SQL/selectAllUsers"); //Best way I can think of, of storing sql
 
 
 
@@ -25,7 +26,7 @@ app.get("/", function(req, res){
 
     //using Pool, from above to run a query
 
-    pool.query("select * from users", (err, res) => {
+    pool.query(SELECT_ALL_USERS, (err, res) => {
         if(err){
             console.log("err");
         }
