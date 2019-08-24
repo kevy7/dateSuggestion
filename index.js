@@ -22,28 +22,9 @@ let port = process.env.PORT || 5000;
 const indexRoutes = require("./routes/index");
 
 
-/* app.get("/", function(req, res){
-
-    //using Pool, from above to run a query
-
-    pool.query(SELECT_ALL_USERS, (err, res) => {
-        if(err){
-            console.log("err");
-        }
-        else {
-            console.log(res.rows); //res.rows give us the rows from the table that we searched for
-            pool.end(); //This is used to end the query
-        }
-    })
-  
-}); */
-//Rather than using the code above, we need to use app.use and imoort our index route as well
-//This is needed for modularity
-
-
 app.use(indexRoutes); //This tells our app to use our index route file that we imported above
 
 
 app.listen(port, function(){
     console.log("Your app is running on port " + port);
-})
+});
