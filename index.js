@@ -8,16 +8,19 @@ require('dotenv').config(); //In order to gain access to our .env file
 //process.env.YELP_API_KEY
 const express = require("express");
 const app = express();
+var bodyParser = require("body-parser");
+app.use(bodyParser.json()); //This is going to allow us to access data stored in 'body' when making a post or put request
+app.use(bodyParser.urlencoded({extended: true}));
 const { Pool } = require('pg');
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: true
-});
+}); //This is used to connect to our remote postegres database hosted via Heroku
 const fs = require("fs"); //This is needed to convert sql files into a string
 let port = process.env.PORT || 5000;
 
 //Import SQL Files here
-const SELECT_ALL_USERS = fs.readFileSync('./SQL/SELECT_ALL_USERS.sql').toString();
+const SELECT_ALL_USERS = fs.readFileSync('./SQL/SELECT_ALL_USERS.sql').toString(); //checkout the mssql extension and if it's needed
 
 
 
