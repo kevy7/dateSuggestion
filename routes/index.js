@@ -7,7 +7,8 @@ const pool = new Pool({
   ssl: true
 });
 
-//var SELECT_ALL_USERS = fs.readFileSync('../SQL/SELECT_ALL_USERS.sql').toString(); //checkout the mssql extension and if it's needed
+
+var SELECT_ALL_USERS = fs.readFileSync('./SQL/SELECT_ALL_USERS.sql').toString(); //checkout the mssql extension and if it's needed
 /*
 
 AUTHENTICATION RELATED ROUTES
@@ -18,7 +19,7 @@ router.get("/", function(req, res){
 
     //using Pool, from above to run a query
 
-    pool.query("SELECT * from users;", (err, res) => {
+    pool.query(SELECT_ALL_USERS, (err, res) => {
         if(err){
             console.log("err");
         }
