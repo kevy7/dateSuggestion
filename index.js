@@ -3,7 +3,6 @@ Instead of the date suggestion app, I'm going to use yelp's api and create a foo
 
 An app used to keep track of the dishes that you've always wanted to eat and it will tell you where to find them
 */
-
 require('dotenv').config(); //In order to gain access to our .env file
 //process.env.YELP_API_KEY
 const express = require("express");
@@ -19,14 +18,11 @@ const pool = new Pool({
 const fs = require("fs"); //This is needed to convert sql files into a string
 let port = process.env.PORT || 5000;
 
-//Import SQL Files here
-const SELECT_ALL_USERS = fs.readFileSync('./SQL/SELECT_ALL_USERS.sql').toString(); //checkout the mssql extension and if it's needed
+//Place Routes below here
+const indexRoutes = require("./routes/index");
 
 
-
-
-
-app.get("/", function(req, res){
+/* app.get("/", function(req, res){
 
     //using Pool, from above to run a query
 
@@ -40,7 +36,12 @@ app.get("/", function(req, res){
         }
     })
   
-})
+}); */
+//Rather than using the code above, we need to use app.use and imoort our index route as well
+//This is needed for modularity
+
+
+app.use(indexRoutes); //This tells our app to use our index route file that we imported above
 
 
 app.listen(port, function(){
