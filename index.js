@@ -13,10 +13,11 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: true
 });
+const fs = require("fs"); //This is needed to convert sql files into a string
 let port = process.env.PORT || 5000;
 
-//Place SQL queries here
-const SELECT_ALL_USERS = require("./SQL/selectAllUsers"); //Best way I can think of, of storing sql
+//Import SQL Files here
+const SELECT_ALL_USERS = fs.readFileSync('./SQL/SELECT_ALL_USERS.sql').toString();
 
 
 
