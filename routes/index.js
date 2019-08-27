@@ -35,7 +35,13 @@ router.get("/", function(req, res){
 //POST request to register user into the database
 router.post("/api/register", function(req, res){
     //We need to hash our passwords
+    let pwd = bcrypt.hash(req.body.password, 5); //hashing the registering user's pw
 
+    //Create query to look if username exists
+
+    pool.query("", (err, res) => {
+        //work in progress
+    })
 });
 
 module.exports = router;
