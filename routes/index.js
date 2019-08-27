@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var fs = require("fs"); //this is needed to read and conver sql statements into string
+const bcrypt = require("bcrypt");
 const { Pool } = require('pg');
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
@@ -34,7 +35,7 @@ router.get("/", function(req, res){
 //POST request to register user into the database
 router.post("/api/register", function(req, res){
     //We need to hash our passwords
-    
+
 });
 
 module.exports = router;
