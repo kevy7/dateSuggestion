@@ -33,26 +33,79 @@ router.get("/", function(req, res){
   
 });
 
+router.get("/poop", function(req, res){
+    console.log("this is a test");
+})
+
 //POST request to register user into the database
 router.post("/api/register", function(req, res){
     //We need to hash our passwords
-    let pwd = bcrypt.hash(req.body.password, 5); //hashing the registering user's pw
+    //We need to generate a salt and hash first
+    //let pwd = bcrypt.hash(req.body.password, 5); //hashing the registering user's pw
 
-    //Create query to look if username exists
+    //console.log(pwd);
 
-    pool.query("SELECT * from users where user_name = $1", [req.body.user_name], (err, res) => {
-        //work in progress
+    pool.query("SELECT * from users where user_name = $1;", [req.body.user_name], (err, result) => {
         if(err){
-            res.send(err);
+            console.log(err);
         }
         else {
-            if(res.rows[0]){
-                //if something is being returned, then the username already exists within the database
-                res.send({err: "The user already exists within the database"}); //REFACTOR this to be sent as an error
+            if(result.rows[0]){
+                console.log("The user already exists, do nothing. Do not use this username");
             }
             else {
-                //If user name does not exist, then enter the user into your database
-                pool.query("INSERT INTO users (user_name, user_email, user_password, first_name, last_name VALUES ($1, $2, $3, $4, $5)", 
+                //If the user is not in the database, then run another query here
+
+                //Salt our password in here
+                bcrypt.genSalt(10, (err, salt) => {
+                    bcrypt.hash(req.body.password, salt, (err, hash) => {
+                        if(err){
+                            console.log(err);
+                        }
+                        else {
+                            //passowrd is succesfully hashed in here
+                            const pwd = hash;
+
+                            pool.query("INSERT INTO users (user_name, user_email, user_password, first_name, last_name) VALUES ($1, $2, $3, $4, $5);", 
+                                [
+                                    req.body.user_name,
+                                    req.body.user_email,
+                                    pwd,
+                                    req.body.first_name,
+                                    req.body.last_name
+                                ],
+                                (err, enteredUser) => {
+                                    if(err){
+                                        console.log(err);
+                                    }
+                                    else {
+                                        console.log(enteredUser);
+                                        //This can succesfully enter something into the database
+                                    }
+                                }
+                            );
+
+                        }
+                    })
+                })
+
+            }
+        }
+    })
+
+
+/* 
+    pool.query("SELECT * from users where user_name = $1;", [req.body.user_name], (err, result) => {
+
+        if(err){
+            console.log("there is an error");
+        }
+        else{
+            if(result.rows[0]){
+                res.send({err: "The user already exists within the database"});
+            }
+            else {
+                pool.query("INSERT INTO users (user_name, user_email, user_password, first_name, last_name) VALUES ('$1', '$2', '$3', '$4', '$5');", 
                 [
                     req.body.user_name, 
                     req.body.user_email,
@@ -60,15 +113,19 @@ router.post("/api/register", function(req, res){
                     req.body.first_name,
                     req.body.last_name
                 
-                ], (err, result) => {
+                ], (err, result2) => {
                     if(err){
                         res.send(err);
                     }
                     passport.authenticate("local");
+                    res.send(result2);
                 })
             }
-        }
-    })
+        }   
+    }) */
+
+
+
 });
 
 module.exports = router;
