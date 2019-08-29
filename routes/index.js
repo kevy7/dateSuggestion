@@ -39,19 +39,14 @@ router.get("/poop", function(req, res){
 
 //POST request to register user into the database
 router.post("/api/register", function(req, res){
-    //We need to hash our passwords
-    //We need to generate a salt and hash first
-    //let pwd = bcrypt.hash(req.body.password, 5); //hashing the registering user's pw
-
-    //console.log(pwd);
 
     pool.query("SELECT * from users where user_name = $1;", [req.body.user_name], (err, result) => {
         if(err){
-            console.log(err);
+            res.send(err);
         }
         else {
             if(result.rows[0]){
-                console.log("The user already exists, do nothing. Do not use this username");
+                res.status(400).json({error: "The username is already being used"});
             }
             else {
                 //If the user is not in the database, then run another query here
@@ -60,10 +55,10 @@ router.post("/api/register", function(req, res){
                 bcrypt.genSalt(10, (err, salt) => {
                     bcrypt.hash(req.body.password, salt, (err, hash) => {
                         if(err){
-                            console.log(err);
+                            res.send(err);
                         }
                         else {
-                            //passowrd is succesfully hashed in here
+                            //password is succesfully hashed in here
                             const pwd = hash;
 
                             pool.query("INSERT INTO users (user_name, user_email, user_password, first_name, last_name) VALUES ($1, $2, $3, $4, $5);", 
@@ -76,10 +71,17 @@ router.post("/api/register", function(req, res){
                                 ],
                                 (err, enteredUser) => {
                                     if(err){
-                                        console.log(err);
+                                        res.send(err);
                                     }
                                     else {
-                                        console.log(enteredUser);
+                                        console.log("User is successfully entered into the database");
+
+
+                                        //Authentication does not work at the moment
+                                        
+                                        /* passport.authenticate("local")(req, res, function(){
+                                            console.log("user is succesfully authenticated?");
+                                        }) */
                                         //This can succesfully enter something into the database
                                     }
                                 }
@@ -92,39 +94,6 @@ router.post("/api/register", function(req, res){
             }
         }
     })
-
-
-/* 
-    pool.query("SELECT * from users where user_name = $1;", [req.body.user_name], (err, result) => {
-
-        if(err){
-            console.log("there is an error");
-        }
-        else{
-            if(result.rows[0]){
-                res.send({err: "The user already exists within the database"});
-            }
-            else {
-                pool.query("INSERT INTO users (user_name, user_email, user_password, first_name, last_name) VALUES ('$1', '$2', '$3', '$4', '$5');", 
-                [
-                    req.body.user_name, 
-                    req.body.user_email,
-                    pwd,
-                    req.body.first_name,
-                    req.body.last_name
-                
-                ], (err, result2) => {
-                    if(err){
-                        res.send(err);
-                    }
-                    passport.authenticate("local");
-                    res.send(result2);
-                })
-            }
-        }   
-    }) */
-
-
 
 });
 
