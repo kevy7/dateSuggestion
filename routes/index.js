@@ -14,8 +14,9 @@ const pool = new Pool({
 //TESTING THIS OUT BELOW
 const LocalStrategy = require("passport-local").Strategy;
 
+//Code below should probably be deleted, it looks like we don't need the below for our routes to work
 //setting up our local strategy
-passport.use(new LocalStrategy('local', ( username, password, cb )=> {
+/* passport.use(new LocalStrategy('local', ( username, password, cb )=> {
     pool.query("SELECT id, username, password from users where username=$1", [username], (err, result) => {
         if(err){
             return cb(err);
@@ -52,30 +53,14 @@ passport.deserializeUser(function(user, done){
 //initializing our session
 app.use(passport.initialize());
 app.use(passport.session()); //Telling our app to use passport for dealing with our sessions
+ */
 
 
-var SELECT_ALL_USERS = fs.readFileSync('./SQL/SELECT_ALL_USERS.sql').toString(); //checkout the mssql extension and if it's needed
 /*
 
 AUTHENTICATION RELATED ROUTES
 
 */
-
-router.get("/", function(req, res){
-
-    //using Pool, from above to run a query
-
-    pool.query(SELECT_ALL_USERS, (err, res) => {
-        if(err){
-            console.log("err");
-        }
-        else {
-            console.log(res.rows); //res.rows give us the rows from the table that we searched for
-            pool.end(); //This is used to end the query
-        }
-    })
-  
-});
 
 //POST request to register user into the database
 router.post("/api/register", function(req, res){

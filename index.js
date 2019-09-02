@@ -35,16 +35,10 @@ const pool = new Pool({
     ssl: true
 }); //This is used to connect to our remote postegres database hosted via Heroku
 
-
-
-//Should probably be removed
 //initializing our session
 app.use(passport.initialize());
 app.use(passport.session()); //Telling our app to use passport for dealing with our sessions
 
-
-
-//Should probably be removed
 //setting up our local strategy
 passport.use('local', new LocalStrategy({passReqToCallBack: true},( username, password, cb )=> {
     console.log("this is being executed");
@@ -73,14 +67,11 @@ passport.use('local', new LocalStrategy({passReqToCallBack: true},( username, pa
     })
 }));
  
-
-//Should probably be removed
 passport.serializeUser(function(user, done){
     console.log("serialize user is executing")
     done(null, user.id);
 })
 
-//Should probably be removed
 passport.deserializeUser(function(id, done){
     pool.query('SELECT id, username FROM users WHERE id = $1', [parseInt(id, 10)], (err, results) => {
         if(err) {
@@ -91,12 +82,9 @@ passport.deserializeUser(function(id, done){
       });
 });
 
-
-
-
-
 //Place Routes below here
 const indexRoutes = require("./routes/index");
+
 
 app.use(indexRoutes); //This tells our app to use our index route file that we imported above
 
