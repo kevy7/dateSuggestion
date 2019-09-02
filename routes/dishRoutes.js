@@ -33,8 +33,8 @@ Route for entering dishes and looking for user's dishes
 router.post("/api/dish", (req, res) => {
 
     //console.log(req.user);
-    console.log(req.isAuthenticated()); //checks if the user is currently logged in
-    console.log(req.user); //Data of user's .id or .username can only be retrieved if the user is logged in
+    //console.log(req.isAuthenticated()); //checks if the user is currently logged in
+    //console.log(req.user); //Data of user's .id or .username can only be retrieved if the user is logged in
 
 
     //Create a query to check if the dish exists in the database first
@@ -87,50 +87,9 @@ router.post("/api/dish", (req, res) => {
                             });
                         }
                     });
-
             }
         }
     });
-
-
-    //Query to insert a dish into the database
-    /* pool.query("INSERT INTO dish (dish_name, dish_description) VALUES ($1, $2);", [req.body.dish, req.body.dishDescription], (err, result) => {
-        if(err){
-            res.send(err);
-        }
-        else {
-            //Write query to look for the dish that was just entered by the user
-            pool.query("SELECT * FROM dish WHERE dish_name = $1 AND dish_description =$2;", [req.body.dish, req.body.dishDescription], (err, dishResult) => {
-                if(err){
-                    res.send(err);
-                }
-                else {
-
-                    //Query to add the dish to the user's list of dishes to try
-                    //console.log(dishResult.rows[0].dish_id);
-                    pool.query("INSERT INTO user_dish_selection (user_id, dish_id) VALUES ($1 ,$2);", [req.user.id, dishResult.rows[0].dish_id], (err, result) => {
-                        if(err){
-                            res.send(err);
-                        }
-                        else {
-                            pool.query("SELECT * FROM dish INNER JOIN user_dish_selection ON (user_dish_selection.dish_id = dish.dish_id) WHERE user_dish_selection.user_id=$1",
-                            [req.user.id], (err, result) => {
-                                if(err){
-                                    res.send(err);
-                                }
-                                else {
-                                    //Sends back all dishes that the logged in user added to their list
-                                    res.send(result.rows);
-                                }
-                            })
-                        }
-                    });
-                }
-            });
-        }
-    }); */
-
-
 });
 
 
