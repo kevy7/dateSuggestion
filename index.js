@@ -84,10 +84,17 @@ passport.deserializeUser(function(id, done){
 
 //Place Routes below here
 const indexRoutes = require("./routes/index");
+const dishRoutes = require("./routes/dishRoutes");
 
 
 app.use(indexRoutes); //This tells our app to use our index route file that we imported above
+app.use(dishRoutes);
 
+//fake routed added to test authentication
+app.get("/poop", (req, res) => {
+
+    console.log(req.isAuthenticated());
+})
 
 app.listen(port, function(){
     console.log("Your app is running on port " + port);

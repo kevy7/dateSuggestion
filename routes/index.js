@@ -63,7 +63,7 @@ AUTHENTICATION RELATED ROUTES
 */
 
 //POST request to register user into the database
-router.post("/api/register", function(req, res){
+router.post("/api/register", (req, res) => {
 
     pool.query("SELECT * from users where username = $1;", [req.body.user_name], (err, result) => {
         if(err){
@@ -75,7 +75,6 @@ router.post("/api/register", function(req, res){
             }
             else {
                 //If the user is not in the database, then run another query here
-
                 //Salt our password in here
                 bcrypt.genSalt(10, (err, salt) => {
                     bcrypt.hash(req.body.password, salt, (err, hash) => {
@@ -99,14 +98,11 @@ router.post("/api/register", function(req, res){
                                         res.send(err);
                                     }
                                     else {
-                                        console.log("User is successfully entered into the database");
-
                                         passport.authenticate('local', function(err, user, info) {
                                             if (err) { return next(err); }
                                             if (!user) { return res.redirect('/login'); }
                                             req.logIn(user, function(err) {
                                               if (err) { return next(err); }
-                                              console.log(user);
                                               res.send(user);
                                             });
                                         })(req, res);
@@ -125,12 +121,11 @@ router.post("/api/register", function(req, res){
 });
 
 //A simple login post
-//This route is not working!!!
 router.post("/api/login", passport.authenticate('local'), (req, res) => {
-    console.log(req.user);
-
     //req.isAuthenticated() will check if the user is authenticated and contains a cookie
     res.send(req.user);
 }) 
+
+
 
 module.exports = router;
