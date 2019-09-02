@@ -3,7 +3,7 @@ const app = express();
 var router = express.Router();
 var fs = require("fs"); //this is needed to read and conver sql statements into string
 //const bcrypt = require("bcrypt");
-const passport = require("passport");
+const passport = require("passport"); //This is probably not needed, this is only used for authentication
 const { Pool } = require('pg');
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,

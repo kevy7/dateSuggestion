@@ -126,6 +126,11 @@ router.post("/api/login", passport.authenticate('local'), (req, res) => {
     res.send(req.user);
 }) 
 
+//logout route
+router.post("/api/logout", (req, res) => {
+    req.logout();
+});
+
 
 
 module.exports = router;
