@@ -95,7 +95,17 @@ router.post("/api/dish", (req, res) => {
 
 //Route to get the user's list of dishes
 router.get("/api/dishes", (req, res) => {
-    
+    //Make sure to login first in order to gain access to req.user
+    pool.query("SELECT * FROM dish INNER JOIN user_dish_selection ON (user_dish_selection.dish_id = dish.dish_id) WHERE user_dish_selection.user_id=$1",
+    [req.user.id], (err, result) => {
+        if(err){
+            res.send(err);
+        }
+        else {
+            //Sends back all dishes that the logged in user added to their list
+            res.send(result.rows);
+        }
+    })
 })
 
 
