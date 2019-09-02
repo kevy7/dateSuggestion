@@ -93,6 +93,12 @@ router.post("/api/dish", (req, res) => {
 });
 
 
+//Route to get the user's list of dishes
+router.get("/api/dishes", (req, res) => {
+    
+})
+
+
 
 
 

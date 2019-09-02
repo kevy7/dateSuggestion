@@ -92,7 +92,6 @@ app.use(dishRoutes);
 
 //fake routed added to test authentication
 app.get("/poop", (req, res) => {
-
     console.log(req.isAuthenticated());
 })
 

@@ -98,6 +98,7 @@ router.post("/api/register", (req, res) => {
                                         res.send(err);
                                     }
                                     else {
+                                        //Authenticate user after they registered with us via the backend
                                         passport.authenticate('local', function(err, user, info) {
                                             if (err) { return next(err); }
                                             if (!user) { return res.redirect('/login'); }
