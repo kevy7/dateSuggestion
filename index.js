@@ -28,9 +28,6 @@ app.use(session({
     saveUninitialized: false
 }));
 
-//initializing our session
-app.use(passport.initialize());
-app.use(passport.session()); //Telling our app to use passport for dealing with our sessions
 
 //Connection to database
 const pool = new Pool({
@@ -39,19 +36,30 @@ const pool = new Pool({
 }); //This is used to connect to our remote postegres database hosted via Heroku
 
 
+
+//Should probably be removed
+//initializing our session
+app.use(passport.initialize());
+app.use(passport.session()); //Telling our app to use passport for dealing with our sessions
+
+
+
+//Should probably be removed
 //setting up our local strategy
-passport.use(new LocalStrategy(( username, password, cb )=> {
-    pool.query("SELECT user_id, user_name, user_password from users where user_name=$1", [username], (err, result) => {
+passport.use('local', new LocalStrategy({passReqToCallBack: true},( username, password, cb )=> {
+    console.log("this is being executed");
+    pool.query("SELECT id, username, password from users where username=$1", [username], (err, result) => {
         if(err){
             return cb(err);
+            
         }
         if(result.rows.length > 0){
             const first = result.rows[0];
-            bcrypt.compare(password, first.user_password, (err, res) => {
+            bcrypt.compare(password, first.password, (err, res) => {
                 if(res){
                     cb(null, {
-                        id: first.user_id,
-                        username: first.user_name
+                        id: first.id,
+                        user: first.username
                     })
                 }
                 else {
@@ -64,15 +72,24 @@ passport.use(new LocalStrategy(( username, password, cb )=> {
         }
     })
 }));
+ 
 
-//Not sure if this is the right way to serialize and deserialize users
+//Should probably be removed
 passport.serializeUser(function(user, done){
-    done(null, user);
+    console.log("serialize user is executing")
+    done(null, user.id);
 })
 
-passport.deserializeUser(function(user, done){
-    done(null, user);
-})
+//Should probably be removed
+passport.deserializeUser(function(id, done){
+    pool.query('SELECT id, username FROM users WHERE id = $1', [parseInt(id, 10)], (err, results) => {
+        if(err) {
+          return done(err)
+        }
+    
+        done(null, results.rows[0])
+      });
+});
 
 
 
