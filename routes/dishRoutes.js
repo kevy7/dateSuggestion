@@ -31,12 +31,6 @@ Route for entering dishes and looking for user's dishes
 */
 
 router.post("/api/dish", (req, res) => {
-
-    //console.log(req.user);
-    //console.log(req.isAuthenticated()); //checks if the user is currently logged in
-    //console.log(req.user); //Data of user's .id or .username can only be retrieved if the user is logged in
-
-
     //Create a query to check if the dish exists in the database first
     pool.query("SELECT dish_id FROM dish WHERE dish_name = $1", [req.body.dish], (err, result) => {
         if(err){

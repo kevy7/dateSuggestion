@@ -41,7 +41,6 @@ app.use(passport.session()); //Telling our app to use passport for dealing with 
 
 //setting up our local strategy
 passport.use('local', new LocalStrategy({passReqToCallBack: true},( username, password, cb )=> {
-    console.log("this is being executed");
     pool.query("SELECT id, username, password from users where username=$1", [username], (err, result) => {
         if(err){
             return cb(err);
@@ -68,7 +67,6 @@ passport.use('local', new LocalStrategy({passReqToCallBack: true},( username, pa
 }));
  
 passport.serializeUser(function(user, done){
-    console.log("serialize user is executing")
     done(null, user.id);
 })
 
