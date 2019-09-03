@@ -11,6 +11,7 @@ const initialState = {}; //Creating our initial state
 const middleware = [thunk]; //Setting up middleware to make api calls
 
 export const store = createStore(
+    reducers,
     initialState,
     applyMiddleware(...middleware)
 

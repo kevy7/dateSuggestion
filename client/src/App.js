@@ -6,9 +6,13 @@ import {Switch, Route, withRouter } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-      <p>App Component</p>
+      <Switch>
+
+      </Switch>
     </div>
   );
 }
+
+//Place route inside the Switch component
 
 export default App;
