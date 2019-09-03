@@ -65,6 +65,7 @@ router.post("/api/dish", (req, res) => {
                                             res.send(err);
                                         }
                                         else {
+                                            //query to look for the user's list of dishes added to their list
                                             pool.query("SELECT * FROM dish INNER JOIN user_dish_selection ON (user_dish_selection.dish_id = dish.dish_id) WHERE user_dish_selection.user_id=$1",
                                             [req.user.id], (err, result) => {
                                                 if(err){
