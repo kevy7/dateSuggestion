@@ -19,6 +19,11 @@ const loginUser = (state = initalState, action) => {
             loading: true
         }
     }
+    else {
+        return {
+            ...state
+        }
+    }
 }
 
 export default loginUser;

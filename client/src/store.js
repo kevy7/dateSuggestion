@@ -13,13 +13,13 @@ const middleware = [thunk]; //Setting up middleware to make api calls
 export const store = createStore(
     reducers,
     initialState,
-    applyMiddleware(...middleware)
+    //applyMiddleware(...middleware)
 
     //This may be needed to view redux state in Chrome
-    /*
+    
     compose(
         applyMiddleware(...middleware),
         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-    );
-    */
+    )
+    
 );
