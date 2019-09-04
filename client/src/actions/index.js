@@ -56,6 +56,8 @@ export const loginUser = (userInfo, history) =>  dispatch => {
             type: LOGIN_USER,
             payload: response.data
         });
+
+        history.push("/");
     })
     .catch(err => {
         dispatch({

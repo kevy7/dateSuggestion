@@ -20,11 +20,11 @@ class Login extends Component {
         e.preventDefault();
 
         const userInfo = {
-
+            username: this.state.username,
+            password: this.state.password
         }
 
-        
-
+        this.props.logInUser(userInfo, this.props.history);
 
     }
 
@@ -63,7 +63,7 @@ class Login extends Component {
                         <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                         <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
                     </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-primary" onClick={this.logInUser}>Submit</button>
                 </form>
             </div>
         )
