@@ -59,10 +59,6 @@ class Login extends Component {
                             onChange={this.handleInputChanges}
                         />
                     </div>
-                    <div className="form-check">
-                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                        <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
-                    </div>
                     <button type="submit" className="btn btn-primary" onClick={this.logInUser}>Submit</button>
                 </form>
             </div>
