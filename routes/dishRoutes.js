@@ -104,6 +104,19 @@ router.get("/api/dishes", (req, res) => {
 })
 
 
+//Route to get list of all available dish items in the database
+router.get("/api/dishnames", (req, res) => {
+    pool.query("SELECT dish_name from dish;", (err, result) => {
+        if(err){
+            res.send(err);
+        }
+        else {
+            //result of query will be in here
+            res.send(result.rows);
+        }
+    });
+});
+
 
 
 
