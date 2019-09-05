@@ -34,7 +34,7 @@ class Login extends Component {
             <div className={styles.loginComponent}>
                 <form>
                     <div className="form-group">
-                        <label htmlFor="exampleInputEmail1">Email address</label>
+                        <label htmlFor="exampleInputEmail1">Username</label>
                         <input 
                             type="text" 
                             value={this.state.username} 
