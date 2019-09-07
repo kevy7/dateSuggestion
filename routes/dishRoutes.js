@@ -38,7 +38,7 @@ router.post("/api/dish", (req, res) => {
         }
         else {
             if(result.rows[0]){
-                res.status(400).send('This is already in the database');
+                //res.status(400).send('This is already in the database');
                 /*
                     if this is already in the database, then look for it's id and enter it for the user
                 */
