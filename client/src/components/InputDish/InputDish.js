@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import styles from './InputDish.module.css';
+import { inputDish } from '../../actions/index';
 
 /*
 
@@ -40,6 +41,21 @@ class InputDish extends Component {
         await this.setState({
             [e.target.name]: e.target.value
         });
+    }
+
+    //Used to enter the user's dish in the database
+    enterDish = async = (e) => {
+        e.preventDefault();
+
+        //No need to send a userID since it will be given via the backend with your cookie
+
+        const dishInfo = {
+            dish: this.state.dish,
+            dishDescription: this.state.dishDescription
+        }
+
+        this.props.inputDish(dishInfo);
+
     }
 
     render(){
@@ -85,4 +101,5 @@ const mapStateToProps = (state) => {
 
 export default withRouter(connect(mapStateToProps, {
     //Actions are passed in here
+    inputDish: inputDish
 })(InputDish));

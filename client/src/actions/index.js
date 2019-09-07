@@ -3,7 +3,7 @@ import axios from 'axios';
 import { LOGIN_USER,
         SET_CURRENT_ERROR,
         LOAD_COMPONENT,
-        REGISTER_USER
+        GET_USER_DISHES
 } from './types';
 
 //action to regiser user
@@ -64,5 +64,23 @@ export const loginUser = (userInfo, history) =>  dispatch => {
             type: SET_CURRENT_ERROR,
             payload: err
         })
+    });
+}
+
+//action used to input user's dish into the database
+export const inputDish = (dishInfo) => {
+    //When we input a user's dish into the database, our server will return to us the user's list of dishes as well
+    axios.post("/api/dish", dishInfo)
+    .then(res => {
+        dispatch({
+            type: GET_USER_DISHES, //We don't need an action for inputting dishes, only to retreive dishes
+            payload: res.data
+        })
+    })
+    .catch(err => {
+        dispatch({
+            type: SET_CURRENT_ERROR,
+            payload: err
+        });
     });
 }
