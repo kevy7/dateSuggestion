@@ -10,6 +10,8 @@ const pool = new Pool({
   ssl: true
 });
 
+const insertUserDishFunc = require("../routes/databaseFunctions/insertUserDish"); //Should return to us the function we created
+
 //Dish table
 /*
 
@@ -31,6 +33,10 @@ Route for entering dishes and looking for user's dishes
 */
 
 router.post("/api/dish", (req, res) => {
+
+    //Create a query that checks and see if the user already selected and added the dish into their database
+
+
     //Create a query to check if the dish exists in the database first
     pool.query("SELECT dish_id FROM dish WHERE dish_name = $1", [req.body.dish], (err, result) => {
         if(err){
@@ -39,16 +45,17 @@ router.post("/api/dish", (req, res) => {
         else {
             if(result.rows[0]){
                 //res.status(400).send('This is already in the database');
-                /*
-                    if this is already in the database, then look for it's id and enter it for the user
-                */
                 const dish_id = result.rows[0].dish_id;
 
-                console.log("dish is not in the database")
+                console.log("dish is in the database")
 
-                //Query to add the dish to the user's list of dishes to try
-                //console.log(dishResult.rows[0].dish_id);
-                pool.query("INSERT INTO user_dish_selection (user_id, dish_id) VALUES ($1 ,$2);", [req.user.id, dish_id], (err, result) => {
+
+
+                //insertUserDishFunc
+                const testResult = insertUserDishFunc(pool, req.user.id, dish_id);
+                console.log(testResult);
+                
+                /* pool.query("INSERT INTO user_dish_selection (user_id, dish_id) VALUES ($1 ,$2);", [req.user.id, dish_id], (err, result) => {
                     if(err){
                         res.send(err);
                     }
@@ -66,7 +73,9 @@ router.post("/api/dish", (req, res) => {
                             }
                         })
                     }
-                });
+                }); */
+
+
             }
             else {
                 //run query in here
@@ -85,6 +94,12 @@ router.post("/api/dish", (req, res) => {
                                     res.send(err);
                                 }
                                 else {
+
+                                    //check if dish is already added into the user's list of dishes
+                                    const dish_id = dishResult.rows[0].dish_id;
+                                    
+
+
 
                                     //Query to add the dish to the user's list of dishes to try
                                     //console.log(dishResult.rows[0].dish_id);
@@ -107,6 +122,8 @@ router.post("/api/dish", (req, res) => {
                                             })
                                         }
                                     });
+
+
 
 
                                 }
