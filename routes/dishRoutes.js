@@ -42,10 +42,31 @@ router.post("/api/dish", (req, res) => {
                 /*
                     if this is already in the database, then look for it's id and enter it for the user
                 */
+                const dish_id = result.rows[0].dish_id;
 
-                const dish = result.rows[0];
+                console.log("dish is not in the database")
 
-                console.log(dish);
+                //Query to add the dish to the user's list of dishes to try
+                //console.log(dishResult.rows[0].dish_id);
+                pool.query("INSERT INTO user_dish_selection (user_id, dish_id) VALUES ($1 ,$2);", [req.user.id, dish_id], (err, result) => {
+                    if(err){
+                        res.send(err);
+                    }
+                    else {
+                        //query to look for the user's list of dishes added to their list
+                        pool.query("SELECT * FROM dish INNER JOIN user_dish_selection ON (user_dish_selection.dish_id = dish.dish_id) WHERE user_dish_selection.user_id=$1",
+                        [req.user.id], (err, result) => {
+                            if(err){
+                                res.send(err);
+                            }
+                            else {
+                                //Sends back all dishes that the logged in user added to their list
+                                //This should return us an array
+                                res.send(result.rows);
+                            }
+                        })
+                    }
+                });
             }
             else {
                 //run query in here
@@ -86,6 +107,8 @@ router.post("/api/dish", (req, res) => {
                                             })
                                         }
                                     });
+
+
                                 }
                             });
                         }
