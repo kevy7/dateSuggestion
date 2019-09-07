@@ -44,7 +44,7 @@ class InputDish extends Component {
     }
 
     //Used to enter the user's dish in the database
-    enterDish = async = (e) => {
+    enterDish = async (e) => {
         e.preventDefault();
 
         //No need to send a userID since it will be given via the backend with your cookie
@@ -58,6 +58,10 @@ class InputDish extends Component {
 
     }
 
+    /*
+        errors.error.data //Will give us the message from the error
+    */
+
     render(){
         return (
             <div className="inputDish">
@@ -66,7 +70,7 @@ class InputDish extends Component {
                         <div className="form-group">
                             <label for="exampleFormControlInput1">Dish Name</label>
                             <input 
-                                type="email" 
+                                type="input" 
                                 className="form-control" 
                                 id="exampleFormControlInput1" 
                                 name="dish"
@@ -85,7 +89,7 @@ class InputDish extends Component {
                                 value={this.state.dishDescription}
                             ></textarea>
                         </div>
-                        <button type="button" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-primary" onClick={this.enterDish}>Submit</button>
                     </form>
                 </div>
             </div>
@@ -95,7 +99,8 @@ class InputDish extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        loginUser: state.loginUser
+        loginUser: state.loginUser,
+        errors: state.errors
     }
 }
 

@@ -13,7 +13,6 @@ class Login extends Component {
 
     handleInputChanges = async (e) => {
         await this.setState({[e.target.name]: e.target.value});
-        console.log(this.state.username);
     }
 
     logInUser = (e) => {

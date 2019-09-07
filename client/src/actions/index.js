@@ -23,7 +23,7 @@ export const registerUser = (userInfo, history) => dispatch => {
     .then(response => {
         //No response is necessary
         //user succesfully logged in
-        history.push("/login");
+        history.push("/dish/new");
     })
     .catch(err => {
         dispatch({
@@ -57,7 +57,7 @@ export const loginUser = (userInfo, history) =>  dispatch => {
             payload: response.data
         });
 
-        history.push("/");
+        history.push("/dish/new");
     })
     .catch(err => {
         dispatch({
@@ -68,7 +68,7 @@ export const loginUser = (userInfo, history) =>  dispatch => {
 }
 
 //action used to input user's dish into the database
-export const inputDish = (dishInfo) => {
+export const inputDish = (dishInfo) => dispatch => {
     //When we input a user's dish into the database, our server will return to us the user's list of dishes as well
     axios.post("/api/dish", dishInfo)
     .then(res => {
@@ -80,7 +80,7 @@ export const inputDish = (dishInfo) => {
     .catch(err => {
         dispatch({
             type: SET_CURRENT_ERROR,
-            payload: err
+            payload: err //use err.response to retreive your custom error message
         });
     });
 }

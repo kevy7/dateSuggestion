@@ -38,7 +38,14 @@ router.post("/api/dish", (req, res) => {
         }
         else {
             if(result.rows[0]){
-                res.status(400).json({error: "The dish name is already in the database, please select it instead"});
+                res.status(400).send('This is already in the database');
+                /*
+                    if this is already in the database, then look for it's id and enter it for the user
+                */
+
+                const dish = result.rows[0];
+
+                console.log(dish);
             }
             else {
                 //run query in here
