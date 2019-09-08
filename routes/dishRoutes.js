@@ -49,13 +49,11 @@ router.post("/api/dish", (req, res) => {
 
                 console.log("dish is in the database")
 
+                //const testResult = insertUserDishFunc(req.user.id, dish_id); //issue with this function at the moment
+                //console.log(testResult);
 
 
-                //insertUserDishFunc
-                const testResult = insertUserDishFunc(pool, req.user.id, dish_id);
-                console.log(testResult);
-                
-                /* pool.query("INSERT INTO user_dish_selection (user_id, dish_id) VALUES ($1 ,$2);", [req.user.id, dish_id], (err, result) => {
+                pool.query("INSERT INTO user_dish_selection (user_id, dish_id) VALUES ($1 ,$2);", [req.user.id, dish_id], (err, result) => {
                     if(err){
                         res.send(err);
                     }
@@ -73,7 +71,7 @@ router.post("/api/dish", (req, res) => {
                             }
                         })
                     }
-                }); */
+                });
 
 
             }
@@ -97,6 +95,8 @@ router.post("/api/dish", (req, res) => {
 
                                     //check if dish is already added into the user's list of dishes
                                     const dish_id = dishResult.rows[0].dish_id;
+
+
                                     
 
 

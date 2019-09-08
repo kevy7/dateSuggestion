@@ -12,9 +12,15 @@
 
  //This function works, the only issue is that it's not returning anything back to us
 
- module.exports = (pool, id, dish_id ) => {
+const { Pool } = require('pg');
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: true
+});
 
-    pool.query("INSERT INTO user_dish_selection (user_id, dish_id) VALUES ($1 ,$2);", [id, dish_id], (err, result) => {
+ module.exports = (id, dish_id ) => {
+
+    /* pool.query("INSERT INTO user_dish_selection (user_id, dish_id) VALUES ($1 ,$2);", [id, dish_id], (err, result) => {
         if(err){
             return err;
         }
@@ -32,5 +38,27 @@
                 }
             })
         }
-    });
+    }); */
+
+    //SELECT * FROM dish INNER JOIN user_dish_selection ON (user_dish_selection.dish_id = dish.dish_id) WHERE user_dish_selection.user_id=$1
+    let result;
+
+    pool.query("SELECT * from dish;",
+    [id], (err, result) => {
+        if(err){
+            result =  err;
+        }
+        else {
+            //Sends back all dishes that the logged in user added to their list
+            //This should return us an array
+            result =  result.rows;
+            console.log(result.rows);
+        }
+    })
+
+    //console.log(result);
+    return result;
+
+    
+
  };
