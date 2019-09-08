@@ -32,7 +32,7 @@ Route for entering dishes and looking for user's dishes
 
 */
 
-
+//Need to find a way to make the code below more efficient, I think the code is redundant and there can be less
 router.post("/api/dish", (req, res) => {
 
     //Create a query to check if the dish exists in the database first
@@ -59,7 +59,7 @@ router.post("/api/dish", (req, res) => {
                         if(result.rows[0]){
                             //There is something in the database, send an error
                             //user already has the dish in their list
-                            res.status(400).send('User already selected this dish and added it to their list of dishes');
+                            res.status(400).send('Sorry :( you already selected this dish and added it to your list');
                         }
                         else {
                             //user didn't add the dish yet
@@ -120,7 +120,7 @@ router.post("/api/dish", (req, res) => {
                                         else {
                                             if(result.rows[0]){
                                                 //There is something in the database, send an error
-                                                res.status(400).send('User already selected this dish and added it to their list of dishes');
+                                                res.status(400).send('Sorry :( you already selected this dish and added it to your list');
                                             }
                                             else {
                                                 //user didn't add the dish yet
