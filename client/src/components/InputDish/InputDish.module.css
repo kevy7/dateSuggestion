@@ -4,3 +4,7 @@
     margin-right: auto;
     padding-top: 100px;
 }
+
+.errorColor {
+    color: red;
+}

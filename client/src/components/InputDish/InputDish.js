@@ -63,6 +63,12 @@ class InputDish extends Component {
     */
 
     render(){
+        let errorDisplay;
+        if(this.props.errors.error.data){
+            errorDisplay = <small id="emailHelp" className="form-text text-muted" className={styles.errorColor}>{this.props.errors.error.data}</small>;
+
+        }   
+
         return (
             <div className="inputDish">
                 <div className={styles.formWrap}>
@@ -77,7 +83,9 @@ class InputDish extends Component {
                                 onChange={this.handleInputChanges}
                                 value={this.state.dish}
                             />
+                            {errorDisplay}
                         </div>
+
                         <div className="form-group">
                             <label for="exampleFormControlTextarea1">Dish Description</label>
                             <textarea 
