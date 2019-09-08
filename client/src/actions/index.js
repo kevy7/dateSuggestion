@@ -80,7 +80,7 @@ export const inputDish = (dishInfo) => dispatch => {
     .catch(err => {
         dispatch({
             type: SET_CURRENT_ERROR,
-            payload: err //use err.response to retreive your custom error message
+            payload: err.response //use err.response to retreive your custom error message
         });
     });
 }
