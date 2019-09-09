@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import styles from './registerForm.module.css';
+import { registerUser } from '../../actions/index';
 
 class RegisterForm extends Component {
 
@@ -21,9 +22,17 @@ class RegisterForm extends Component {
     }
 
     registerUser = (e) => {
-        e.preventDefualt();
+        e.preventDefault();
 
-        
+        const userInfo = {
+            username: this.state.username,
+            user_email: this.state.email,
+            first_name: this.state.firstName,
+            last_name: this.state.lastName,
+            password: this.state.password
+        }
+
+        this.props.registerUser(userInfo, this.props.history);
     }
 
     
@@ -67,7 +76,6 @@ class RegisterForm extends Component {
                             className="form-control" 
                             id="username" 
                             aria-describedby="emailHelp" 
-                            placeholder="Enter username" 
                             name="username" 
                             onChange={this.handleInputChanges}
                             value={this.state.username}
@@ -92,13 +100,12 @@ class RegisterForm extends Component {
                             type="password" 
                             className="form-control" 
                             id="exampleInputPassword1" 
-                            placeholder="Password" 
                             name="password" 
                             onChange={this.handleInputChanges}
                             value={this.state.password}
                         />
                     </div>
-                    <button type="submit" className="btn btn-primary" >Submit</button>
+                    <button type="submit" className="btn btn-primary" onClick={this.registerUser}>Submit</button>
                 </form>
             </div>
         )
@@ -111,4 +118,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default withRouter(connect()(RegisterForm));
+export default withRouter(connect(mapStateToProps, {
+    registerUser: registerUser
+})(RegisterForm));

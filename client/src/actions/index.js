@@ -23,7 +23,7 @@ export const registerUser = (userInfo, history) => dispatch => {
     .then(response => {
         //No response is necessary
         //user succesfully logged in
-        history.push("/dish/new");
+        history.push("/login");
     })
     .catch(err => {
         dispatch({

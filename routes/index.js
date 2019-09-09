@@ -65,7 +65,7 @@ AUTHENTICATION RELATED ROUTES
 //POST request to register user into the database
 router.post("/api/register", (req, res) => {
 
-    pool.query("SELECT * from users where username = $1;", [req.body.user_name], (err, result) => {
+    pool.query("SELECT * from users where username = $1;", [req.body.username], (err, result) => {
         if(err){
             res.send(err);
         }
