@@ -14,47 +14,6 @@ const pool = new Pool({
 //TESTING THIS OUT BELOW
 const LocalStrategy = require("passport-local").Strategy;
 
-//Code below should probably be deleted, it looks like we don't need the below for our routes to work
-//setting up our local strategy
-/* passport.use(new LocalStrategy('local', ( username, password, cb )=> {
-    pool.query("SELECT id, username, password from users where username=$1", [username], (err, result) => {
-        if(err){
-            return cb(err);
-        }
-        if(result.rows.length > 0){
-            const first = result.rows[0];
-            bcrypt.compare(password, first.password, (err, res) => {
-                if(res){
-                    cb(null, {
-                        id: first.id,
-                        username: first.username
-                    })
-                }
-                else {
-                    cb(null, false);
-                }
-            })
-        }
-        else {
-            cb(null, false);
-        }
-    })
-}));
-
-//Not sure if this is the right way to serialize and deserialize users
-passport.serializeUser(function(user, done){
-    done(null, user);
-})
-
-passport.deserializeUser(function(user, done){
-    done(null, user);
-})
-
-//initializing our session
-app.use(passport.initialize());
-app.use(passport.session()); //Telling our app to use passport for dealing with our sessions
- */
-
 
 /*
 
