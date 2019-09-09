@@ -28,7 +28,7 @@ export const registerUser = (userInfo, history) => dispatch => {
     .catch(err => {
         dispatch({
             type: SET_CURRENT_ERROR,
-            payload: err
+            payload: err.response
         });
     });
 }

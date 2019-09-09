@@ -39,6 +39,18 @@ class RegisterForm extends Component {
 
     render(){
 
+        //this.props.errors.error.data
+
+        const firstNameErr;
+        const lastNameErr;
+        const usernameErr;
+        const emailErr;
+        const passwordErr;
+
+        if(this.props.errors.error.data){
+            //return the error components that will be displayed to the user when attempting to register to our website
+        }
+
         return (
             <div className={styles.registerFormContainer}>
                 <h1>Welcome to Food Dish!!! Don't know what to call this yet</h1>
@@ -114,7 +126,7 @@ class RegisterForm extends Component {
 
 const mapStateToProps = (state) => {
     return {
-
+        errors: state.errors
     }
 }
 

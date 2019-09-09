@@ -10,6 +10,8 @@ const pool = new Pool({
   ssl: true
 });
 
+const validateRegistration = require("../validation/validateRegistration");
+
 
 //TESTING THIS OUT BELOW
 const LocalStrategy = require("passport-local").Strategy;
@@ -23,6 +25,18 @@ AUTHENTICATION RELATED ROUTES
 
 //POST request to register user into the database
 router.post("/api/register", (req, res) => {
+
+    /*
+        We're going to work on sending back user errors
+    */
+
+    const { errors, isValid } = validateRegistration(req.body);
+
+    if(!isValid){
+        //if isValid is false, then that means that errors will be returned to us
+        //We have to use return in order for the query below to not execute if the user doesn't match our required reg expressions when registering in our database
+        return res.status(400).send(errors);
+    }
 
     pool.query("SELECT * from users where username = $1;", [req.body.username], (err, result) => {
         if(err){
