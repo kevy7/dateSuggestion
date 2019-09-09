@@ -5,7 +5,31 @@ import { withRouter } from 'react-router-dom';
 import styles from './registerForm.module.css';
 
 class RegisterForm extends Component {
+
+    state = {
+        firstName: "",
+        lastName: "",
+        username: "",
+        email: "",
+        password: ""
+    }
+
+    handleInputChanges = async (e) => {
+        await this.setState({
+            [e.target.name]: e.target.value
+        });
+    }
+
+    registerUser = (e) => {
+        e.preventDefualt();
+
+        
+    }
+
+    
+
     render(){
+
         return (
             <div className={styles.registerFormContainer}>
                 <h1>Welcome to Food Dish!!! Don't know what to call this yet</h1>
@@ -13,11 +37,27 @@ class RegisterForm extends Component {
                     <div className="form-row">
                         <div className="form-group col-md-6">
                             <label htmlFor="firstName">First Name</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="" name="firstName" />
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="firstName" 
+                                placeholder="" 
+                                name="firstName" 
+                                onChange={this.handleInputChanges}
+                                value={this.state.firstName}
+                            />
                         </div>
                         <div class="form-group col-md-6">
                             <label for="lastName">Last Name</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="" name="lastName"/>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="lastName" 
+                                placeholder="" 
+                                name="lastName"
+                                onChange={this.handleInputChanges}
+                                value={this.state.lastName}
+                            />
                         </div>
                     </div>
                     <div className="form-group">
@@ -29,16 +69,20 @@ class RegisterForm extends Component {
                             aria-describedby="emailHelp" 
                             placeholder="Enter username" 
                             name="username" 
+                            onChange={this.handleInputChanges}
+                            value={this.state.username}
                         />
                     </div>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
                         <input 
-                            type="text" 
+                            type="email" 
                             className="form-control" 
                             id="email" 
                             aria-describedby="emailHelp" 
                             name="email" 
+                            onChange={this.handleInputChanges}
+                            value={this.state.email}
                         />
                         <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
@@ -50,6 +94,8 @@ class RegisterForm extends Component {
                             id="exampleInputPassword1" 
                             placeholder="Password" 
                             name="password" 
+                            onChange={this.handleInputChanges}
+                            value={this.state.password}
                         />
                     </div>
                     <button type="submit" className="btn btn-primary" >Submit</button>
