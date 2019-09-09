@@ -8,3 +8,7 @@
 .registerForm {
     padding-top: 20px;
 }
+
+.errorMessage {
+    color: red;
+}

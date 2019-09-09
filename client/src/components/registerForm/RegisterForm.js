@@ -39,16 +39,24 @@ class RegisterForm extends Component {
 
     render(){
 
-        //this.props.errors.error.data
-
-        const firstNameErr;
-        const lastNameErr;
-        const usernameErr;
-        const emailErr;
-        const passwordErr;
+        //Code to display error messages to the user when registering to our website
+        let errors;
+        let firstNameErr;
+        let lastNameErr;
+        let usernameErr;
+        let emailErr;
+        let passwordErr;
 
         if(this.props.errors.error.data){
-            //return the error components that will be displayed to the user when attempting to register to our website
+            errors = this.props.errors.error.data || "";
+        }
+
+        if(errors){
+            firstNameErr = <small id="emailHelp" className="form-text text-muted" className={styles.errorMessage}>{errors.first_name}</small>;
+            lastNameErr = <small id="emailHelp" className="form-text text-muted" className={styles.errorMessage}>{errors.last_name}</small>;
+            usernameErr = <small id="emailHelp" className="form-text text-muted" className={styles.errorMessage}>{errors.username}</small>;
+            passwordErr = <small id="emailHelp" className="form-text text-muted" className={styles.errorMessage}>{errors.password}</small>;
+            emailErr = <small id="emailHelp" className="form-text text-muted" className={styles.errorMessage}>{errors.user_email}</small>;
         }
 
         return (
@@ -67,6 +75,7 @@ class RegisterForm extends Component {
                                 onChange={this.handleInputChanges}
                                 value={this.state.firstName}
                             />
+                            {firstNameErr}
                         </div>
                         <div class="form-group col-md-6">
                             <label for="lastName">Last Name</label>
@@ -79,6 +88,7 @@ class RegisterForm extends Component {
                                 onChange={this.handleInputChanges}
                                 value={this.state.lastName}
                             />
+                            {lastNameErr}
                         </div>
                     </div>
                     <div className="form-group">
@@ -92,6 +102,7 @@ class RegisterForm extends Component {
                             onChange={this.handleInputChanges}
                             value={this.state.username}
                         />
+                        {usernameErr}
                     </div>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
@@ -104,7 +115,7 @@ class RegisterForm extends Component {
                             onChange={this.handleInputChanges}
                             value={this.state.email}
                         />
-                        <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                        {emailErr}
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputPassword1">Password</label>
@@ -116,6 +127,7 @@ class RegisterForm extends Component {
                             onChange={this.handleInputChanges}
                             value={this.state.password}
                         />
+                        {passwordErr}
                     </div>
                     <button type="submit" className="btn btn-primary" onClick={this.registerUser}>Submit</button>
                 </form>
