@@ -85,7 +85,7 @@ export const inputDish = (dishInfo) => dispatch => {
     });
 }
 
-export const getUserDishesAction = () => {
+export const getUserDishesAction = () => dispatch => {
     axios.get("/api/user/dishes")
     .then(res => {
         dispatch({
