@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import { getUserDishesAction } from '../../actions/index';
+import DishComponent from './DishComponent';
 
 class DishesContainer extends Component {
 
@@ -11,9 +12,20 @@ class DishesContainer extends Component {
     }
 
     render(){
+
+        const userDishes = this.props.userDishes.map(dish => {
+            //dish.dish_name
+            //dish.dish_description
+            return <DishComponent 
+                        dish_name={dish.dish_name}
+                        dish_description={dish.dish_description}
+                    />
+        });
+
+
         return (
             <div className = "dishesContainer">
-
+                {userDishes}
             </div>
         )
     }
@@ -21,7 +33,7 @@ class DishesContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        userDishes: state.userDishes
+        userDishes: state.userDishes.userDishes
     }
 }
 
