@@ -84,3 +84,19 @@ export const inputDish = (dishInfo) => dispatch => {
         });
     });
 }
+
+export const getUserDishesAction = () => {
+    axios.get("/api/user/dishes")
+    .then(res => {
+        dispatch({
+            type: GET_USER_DISHES,
+            payload: res.data
+        });
+    })
+    .catch(err => {
+        dispatch({
+            type: SET_CURRENT_ERROR,
+            payload: err
+        });
+    });
+}
