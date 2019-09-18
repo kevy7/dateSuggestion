@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 import { getUserDishesAction } from '../../actions/index';
 import DishComponent from './DishComponent';
+import styles from './DishesContainer.module.css';
 
 class DishesContainer extends Component {
 
@@ -24,7 +25,7 @@ class DishesContainer extends Component {
 
 
         return (
-            <div className = "dishesContainer">
+            <div className = {styles.dishesContainer}>
                 {userDishes}
             </div>
         )

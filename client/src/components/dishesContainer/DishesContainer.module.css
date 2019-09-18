@@ -1,0 +1,10 @@
+.dishesContainer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 10%;
+    padding-right: 10%;
+    align-self: flex-start;
+}
