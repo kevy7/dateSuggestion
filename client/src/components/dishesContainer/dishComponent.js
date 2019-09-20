@@ -5,13 +5,13 @@ import styles from './DishComponent.module.css';
 
 const DishComponent = (state) => {
     const style = {
-        width: '18rem'
+        height: '100%'
     }
     return (
         <div className={styles.dishComponent}>
-            <div className="card" style={style}>
+            <div className="card" style={style} /*className={styles.card}*/ >
                     {/* <img src="..." className="card-img-top" alt="..." /> */}
-                    <div className="card-body">
+                    <div className="card-body" className={styles.card}>
                         <h5 className="card-title">{state.dish_name}</h5>
                         <p className="card-text">{state.dish_description}</p>
                         <a href="#" className="btn btn-primary">View Recipes and Places</a>
