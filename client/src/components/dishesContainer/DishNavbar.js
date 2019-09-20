@@ -15,7 +15,14 @@ class DishNavBar extends Component {
                             {/* <div class="input-group-prepend">
                                 <button class="btn btn-outline-secondary" type="button">Button</button>
                             </div> */}
-                            <input type="text" className="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" />
+                            <input 
+                                type="text" 
+                                className="form-control" 
+                                placeholder="" 
+                                aria-label="" 
+                                aria-describedby="basic-addon1" 
+                                placeholder="Search for your recipe here..."
+                            />
                         </div>
                     </li>
                 </ul>
