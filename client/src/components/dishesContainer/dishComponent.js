@@ -10,7 +10,7 @@ const DishComponent = (state) => {
     return (
         <div className={styles.dishComponent}>
             <div className="card" style={style}>
-                    <img src="..." className="card-img-top" alt="..." />
+                    {/* <img src="..." className="card-img-top" alt="..." /> */}
                     <div className="card-body">
                         <h5 className="card-title">{state.dish_name}</h5>
                         <p className="card-text">{state.dish_description}</p>
