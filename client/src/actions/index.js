@@ -85,6 +85,7 @@ export const inputDish = (dishInfo) => dispatch => {
     });
 }
 
+//Action used to get the user's list of dishes
 export const getUserDishesAction = () => dispatch => {
     axios.get("/api/user/dishes")
     .then(res => {
@@ -98,5 +99,25 @@ export const getUserDishesAction = () => dispatch => {
             type: SET_CURRENT_ERROR,
             payload: err
         });
+    });
+}
+
+//Action used to get a list of recipes via the edamam api
+export const getRecipes = (userDish) => dispatch => {
+    //How to pass in parameters using axios
+    const parameter = {
+        params: {
+            app_id: '',
+            app_key: '',
+            q: userDish
+        }
+    }
+
+    axios.get("")
+    .then(res => {
+
+    })
+    .catch(err => {
+
     });
 }

@@ -22,7 +22,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/register" component={RegisterForm} />
         <Route path="/home" component={Home} />
-        <Route path="/dishes" component={DishesContainer} />
+        <Route exact path="/dishes" component={DishesContainer} />
         <Route exact path="/dish/new" component={InputDish} />
         <Route exact path="/dishes/:id" component={DishPage} />
       </Switch>
