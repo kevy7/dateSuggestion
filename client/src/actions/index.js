@@ -1,4 +1,6 @@
 import axios from 'axios';
+require('dotenv').config(); //In order to gain access to our .env file
+
 
 import { LOGIN_USER,
         SET_CURRENT_ERROR,
@@ -107,15 +109,16 @@ export const getRecipes = (userDish) => dispatch => {
     //How to pass in parameters using axios
     const parameter = {
         params: {
-            app_id: '',
-            app_key: '',
+            app_id: process.env.edamam_app_id, //Set these up as environment variables
+            app_key: process.env.edamam_app_key, //Set these up as environment variables
             q: userDish
         }
     }
 
-    axios.get("")
+    axios.get("https://api.edamam.com/search", parameter)
     .then(res => {
-
+        //We want to dispatch our response here
+        //Next task is to create a reducer for this action
     })
     .catch(err => {
 
