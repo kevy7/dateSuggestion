@@ -96,15 +96,17 @@ router.post("/api/register", (req, res) => {
 
 //A simple login post
 router.post("/api/login", passport.authenticate('local'), (req, res) => {
-    //req.isAuthenticated() will check if the user is authenticated and contains a cookie
-    res.send(req.user);
+    if(req.isAuthenticated() == true){
+        res.send(req.user);
+    }
+    else {
+        res.status(400).json({error: "Username and password does not match our database."});
+    }
 }) 
 
 //logout route
 router.post("/api/logout", (req, res) => {
     req.logout();
 });
-
-
 
 module.exports = router;
