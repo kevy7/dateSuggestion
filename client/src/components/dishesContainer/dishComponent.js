@@ -20,7 +20,7 @@ const DishComponent = (state) => {
         </div>
     )
 }
- 
+
 //Below, are our two props that is expected to be passed down below
 DishComponent.propTypes = { //propTypes are lowercased when declaring within your component
     dish_name: PropTypes.string,
