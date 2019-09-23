@@ -9,6 +9,7 @@ import RegisterForm from "./components/registerForm/RegisterForm";
 import Navbar from "./components/Navbar/Navbar";
 import InputDish from  "./components/InputDish/InputDish";
 import DishesContainer from "./components/dishesContainer/dishesContainer";
+import DishPage from "./components/dishPage/DishPage";
 
 
 
@@ -23,7 +24,7 @@ function App() {
         <Route path="/home" component={Home} />
         <Route path="/dishes" component={DishesContainer} />
         <Route exact path="/dish/new" component={InputDish} />
-        
+        <Route exact path="/dishes/:id" component={DishPage} />
       </Switch>
     </div>
   );
