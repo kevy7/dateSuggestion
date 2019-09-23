@@ -23,6 +23,7 @@ function App() {
         <Route path="/home" component={Home} />
         <Route path="/dishes" component={DishesContainer} />
         <Route exact path="/dish/new" component={InputDish} />
+        
       </Switch>
     </div>
   );
