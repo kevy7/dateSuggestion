@@ -1,5 +1,5 @@
 import axios from 'axios';
-require('dotenv').config(); //In order to gain access to our .env file
+//require('dotenv').config(); //In order to gain access to our .env file
 
 
 import { LOGIN_USER,
@@ -91,6 +91,7 @@ export const inputDish = (dishInfo) => dispatch => {
 export const getUserDishesAction = () => dispatch => {
     axios.get("/api/user/dishes")
     .then(res => {
+        console.log(process.env.REACT_APP_edamam_app_id);
         dispatch({
             type: GET_USER_DISHES,
             payload: res.data
