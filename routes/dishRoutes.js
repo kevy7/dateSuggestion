@@ -1,5 +1,6 @@
 var express = require("express");
 const app = express();
+require('dotenv').config(); //In order to gain access to our .env file
 var router = express.Router();
 var fs = require("fs"); //this is needed to read and conver sql statements into string
 //const bcrypt = require("bcrypt");
@@ -186,6 +187,12 @@ router.get("/api/dishes", (req, res) => {
         }
     });
 });
+
+
+//Get list of all recipes for the user's selected dish
+router.get('/api/dishes/recipes', (req, res) => {
+    
+})
 
 
 
