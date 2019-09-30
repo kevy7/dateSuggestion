@@ -108,22 +108,13 @@ export const getUserDishesAction = () => dispatch => {
 //Action used to get a list of recipes via the edamam api
 export const getRecipes = (userDish) => dispatch => {
 
-    //All of this is going to be moved to the backend because of env variable concerns
-    //How to pass in parameters using axios
-    const parameter = {
-        params: {
-            app_id: process.env.edamam_app_id, //Set these up as environment variables
-            app_key: process.env.edamam_app_key, //Set these up as environment variables
-            q: userDish
-        }
-    }
+    //userDish will contain the user's selected dish
 
-    axios.get("https://api.edamam.com/search", parameter)
-    .then(res => {
-        //We want to dispatch our response here
-        //Next task is to create a reducer for this action
+    axios.get("/api/dishes/recipes", userDish)
+    .then(response => {
+        //dispatch something here
     })
     .catch(err => {
 
-    });
+    })
 }

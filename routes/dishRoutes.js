@@ -191,7 +191,26 @@ router.get("/api/dishes", (req, res) => {
 
 //Get list of all recipes for the user's selected dish
 router.get('/api/dishes/recipes', (req, res) => {
-    
+
+    //How to pass in parameters using axios
+    const parameter = {
+        params: {
+            app_id: process.env.edamam_app_id, //Set these up as environment variables
+            app_key: process.env.edamam_app_key, //Set these up as environment variables
+            q: req.body.userDish
+        }
+    }
+
+    axios.get("https://api.edamam.com/search", parameter)
+    .then(res => {
+        //We want to dispatch our response here
+        //Next task is to create a reducer for this action
+    })
+    .catch(err => {
+        res.send(err); //Send the error back to the user
+    });
+
+
 })
 
 
