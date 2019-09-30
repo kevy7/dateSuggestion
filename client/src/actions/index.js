@@ -107,6 +107,8 @@ export const getUserDishesAction = () => dispatch => {
 
 //Action used to get a list of recipes via the edamam api
 export const getRecipes = (userDish) => dispatch => {
+
+    //All of this is going to be moved to the backend because of env variable concerns
     //How to pass in parameters using axios
     const parameter = {
         params: {
