@@ -8,8 +8,10 @@ import { getRecipes } from '../../actions/index';
 class DishPage extends Component {
 
     componentDidMount = () => {
-        const userDish = "ramen";
+        const userDish = this.props.match.params.id;
         this.props.getRecipes(userDish);
+
+        //this.props.match.params.id //used to access your id url   
     }
 
     render(){

@@ -111,12 +111,9 @@ export const getRecipes = (userDishes) => dispatch => {
 
     //userDish will contain the user's selected dish
 
-    /* dispatch({
+    dispatch({
         type: LOAD_COMPONENT
-    }); */
-    console.log("user dish from actions")
-    console.log(userDishes);
-
+    });
     //Req.body is not being sent because this is a get request and not a post request
 
     axios.get("/api/dishes/recipes", {
