@@ -6,6 +6,7 @@ var fs = require("fs"); //this is needed to read and conver sql statements into 
 //const bcrypt = require("bcrypt");
 const passport = require("passport"); //This is probably not needed, this is only used for authentication
 const { Pool } = require('pg');
+const axios = require("axios");
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: true
@@ -195,21 +196,19 @@ router.get('/api/dishes/recipes', (req, res) => {
     //How to pass in parameters using axios
     const parameter = {
         params: {
-            app_id: process.env.edamam_app_id, //Set these up as environment variables
-            app_key: process.env.edamam_app_key, //Set these up as environment variables
+            app_id: process.env.REACT_APP_edamam_app_id, //Set these up as environment variables
+            app_key: process.env.REACT_APP_edamam_app_key, //Set these up as environment variables
             q: req.body.userDish
         }
     }
 
-    console.log(this.parameter.params);
-
     axios.get("https://api.edamam.com/search", parameter)
-    .then(res => {
-        //We want to dispatch our response here
-        //Next task is to create a reducer for this action
+    .then(response => {
+        res.send(response.data);
+        //Label will give us the name of the recipe
     })
     .catch(err => {
-        res.send(err); //Send the error back to the user
+        res.send(err);
     });
 
 
