@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import styles from './DishComponent.module.css';
 
@@ -7,6 +8,7 @@ const DishComponent = (state) => {
     const style = {
         height: '100%'
     }
+    const url = "/dishes/" + state.dish_name;
     return (
         <div className={styles.dishComponent}>
             <div className="card" style={style} /*className={styles.card}*/ >
@@ -14,7 +16,7 @@ const DishComponent = (state) => {
                     <div className="card-body" className={styles.card}>
                         <h5 className="card-title">{state.dish_name}</h5>
                         <p className="card-text">{state.dish_description}</p>
-                        <a href="#" className="btn btn-primary">View Recipes and Places</a>
+                        <Link to={url} className="btn btn-primary">View Recipes and Places</Link>
                     </div>
             </div>
         </div>
