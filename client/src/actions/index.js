@@ -115,6 +115,9 @@ export const getRecipes = (userDish) => dispatch => {
         //dispatch something here
     })
     .catch(err => {
-
+        dispatch({
+            type: SET_CURRENT_ERROR,
+            payload: err
+        })
     })
 }

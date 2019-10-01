@@ -201,6 +201,8 @@ router.get('/api/dishes/recipes', (req, res) => {
         }
     }
 
+    console.log(this.parameter.params);
+
     axios.get("https://api.edamam.com/search", parameter)
     .then(res => {
         //We want to dispatch our response here
