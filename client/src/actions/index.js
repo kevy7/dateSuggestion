@@ -5,7 +5,8 @@ import axios from 'axios';
 import { LOGIN_USER,
         SET_CURRENT_ERROR,
         LOAD_COMPONENT,
-        GET_USER_DISHES
+        GET_USER_DISHES,
+        GET_USER_RECIPES
 } from './types';
 
 //action to regiser user
@@ -106,13 +107,30 @@ export const getUserDishesAction = () => dispatch => {
 }
 
 //Action used to get a list of recipes via the edamam api
-export const getRecipes = (userDish) => dispatch => {
+export const getRecipes = (userDishes) => dispatch => {
 
     //userDish will contain the user's selected dish
 
-    axios.get("/api/dishes/recipes", userDish)
+    /* dispatch({
+        type: LOAD_COMPONENT
+    }); */
+    console.log("user dish from actions")
+    console.log(userDishes);
+
+    //Req.body is not being sent because this is a get request and not a post request
+
+    axios.get("/api/dishes/recipes", {
+        params: {
+            userDish: userDishes
+        }
+    })
     .then(response => {
         //dispatch something here
+        dispatch({
+            type: GET_USER_RECIPES,
+            payload: response.data
+        })
+
     })
     .catch(err => {
         dispatch({

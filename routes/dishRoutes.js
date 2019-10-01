@@ -198,19 +198,20 @@ router.get('/api/dishes/recipes', (req, res) => {
         params: {
             app_id: process.env.REACT_APP_edamam_app_id, //Set these up as environment variables
             app_key: process.env.REACT_APP_edamam_app_key, //Set these up as environment variables
-            q: req.body.userDish
+            q: req.query.userDish //The user's selected dish
         }
     }
 
+    console.log(req.query.userDish);
+
     axios.get("https://api.edamam.com/search", parameter)
     .then(response => {
-        res.send(response.data);
-        //Label will give us the name of the recipe
+        res.send(response.data.hits);
     })
     .catch(err => {
         res.send(err);
     });
-
+ 
 
 })
 
