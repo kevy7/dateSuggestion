@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import styles from './DishPage.module.css';
 import { getRecipes } from '../../actions/index';
@@ -17,12 +18,16 @@ class DishPage extends Component {
     render(){
         return(
             <div className={styles.dishPage}>
-                <h1>Your Dish</h1>
+                <h1>{this.props.match.params.id}</h1>
                 <hr />
-                <h2>Dish name here</h2>
+                <h2>Recipes</h2>
             </div>
         )
     }
+}
+
+DishPage.propTypes = {
+
 }
 
 const mapStateToProps = (state) => {
