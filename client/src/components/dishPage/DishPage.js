@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import styles from './DishPage.module.css';
 import { getRecipes } from '../../actions/index';
+import BreadCrumb from './subComponents/BreadCrumb/BreadCrumb';
 
 class DishPage extends Component {
 
@@ -21,6 +22,7 @@ class DishPage extends Component {
                 <h1>{this.props.match.params.id}</h1>
                 <hr />
                 <h2>Recipes</h2>
+
             </div>
         )
     }
