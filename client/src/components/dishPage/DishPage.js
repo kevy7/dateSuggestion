@@ -11,7 +11,7 @@ class DishPage extends Component {
 
     componentDidMount = () => {
         const userDish = this.props.match.params.id;
-        this.props.getRecipes(userDish);
+        //this.props.getRecipes(userDish);
 
         //this.props.match.params.id //used to access your id url   
     }
@@ -19,9 +19,11 @@ class DishPage extends Component {
     render(){
         return(
             <div className={styles.dishPage}>
-                <h1>{this.props.match.params.id}</h1>
-                <hr />
-                <h2>Recipes</h2>
+                <h1 className={styles.dishTitle}>{this.props.match.params.id}</h1>
+                <BreadCrumb />
+
+                {/* Nested routes are listed below */}
+                {/* <Route exact path="/dishes/:id/recipes" component={BreadCrumb}/> */}
 
             </div>
         )

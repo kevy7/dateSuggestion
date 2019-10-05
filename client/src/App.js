@@ -24,7 +24,7 @@ function App() {
         <Route path="/home" component={Home} />
         <Route exact path="/dishes" component={DishesContainer} />
         <Route exact path="/dish/new" component={InputDish} />
-        <Route exact path="/dishes/:id" component={DishPage} />
+        <Route path="/dishes/:id" component={DishPage} />
       </Switch>
     </div>
   );
