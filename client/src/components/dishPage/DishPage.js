@@ -13,7 +13,8 @@ class DishPage extends Component {
         const userDish = this.props.match.params.id;
         //this.props.getRecipes(userDish);
 
-        //this.props.match.params.id //used to access your id url   
+        console.log("recipes action will not be initiated at this moment.");
+
     }
 
     render(){
