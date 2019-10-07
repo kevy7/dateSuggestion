@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import RecipeComponent from './RecipeComponents/RecipeComponents'; //components will be looped through and displayed multiple times
+
 class RecipeListContainer extends Component {
     render(){
         //check out how to access user recipe images
         return (
             <div className="RecipeListContainer">
-                
+
             </div>
         )
     }
