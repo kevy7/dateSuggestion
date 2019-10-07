@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 
 class RecipeListContainer extends Component {
     render(){
+        //check out how to access user recipe images
         return (
             <div className="RecipeListContainer">
-
+                
             </div>
         )
     }
