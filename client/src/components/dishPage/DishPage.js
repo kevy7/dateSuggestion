@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import styles from './DishPage.module.css';
 import { getRecipes } from '../../actions/index';
 import BreadCrumb from './subComponents/BreadCrumb/BreadCrumb';
-import RecipeListContainer from './subComponents/RecipeListContainer/RecipeListContainer';
+import RecipeContainer from './subComponents/RecipeContainer/RecipeContainer';
 
 class DishPage extends Component {
 
@@ -25,7 +25,7 @@ class DishPage extends Component {
                 <BreadCrumb />
 
                 {/* Nested routes are listed below */}
-                <Route exact path="/dishes/:id/recipes" component={RecipeListContainer}/>
+                <Route exact path="/dishes/:id/recipes" component={RecipeContainer}/>
 
             </div>
         )

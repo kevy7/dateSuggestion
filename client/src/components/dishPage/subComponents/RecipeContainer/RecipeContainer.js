@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-class RecipeListContainer extends Component {
+import RecipeListContainer from './RecipeListContainer/RecipeListContainer';
+
+class RecipeContainer extends Component {
     render(){
         return (
             <div className="RecipeListContainer">
@@ -11,4 +13,4 @@ class RecipeListContainer extends Component {
     }
 }
 
-export default RecipeListContainer;
+export default RecipeContainer;
