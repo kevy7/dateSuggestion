@@ -5,7 +5,7 @@ class RecipeListContainer extends Component {
     render(){
         return (
             <div className="RecipeListContainer">
-
+                <h1>Recipe List Container</h1>
             </div>
         )
     }
