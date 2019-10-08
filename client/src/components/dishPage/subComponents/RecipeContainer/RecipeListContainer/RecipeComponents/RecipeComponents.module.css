@@ -1,3 +1,16 @@
+.recipeComponent {
+    width: 250px;
+    height: 250px;
+}
+
+.recipeComponent::before{
+    opacity: .5;
+}
+
+.recipeTitle {
+    text-align: center;
+}
+
 .recipeImage {
     width: 250px;
     height: 250px;
