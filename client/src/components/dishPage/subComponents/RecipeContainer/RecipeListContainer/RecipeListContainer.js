@@ -9,7 +9,8 @@ class RecipeListContainer extends Component {
         //check out how to access user recipe images
         return (
             <div className="RecipeListContainer">
-
+                <h2>This is the recipe list container</h2>
+                <RecipeComponent />
             </div>
         )
     }

@@ -8,6 +8,7 @@ class RecipeContainer extends Component {
         return (
             <div className="RecipeListContainer">
                 <h1>Recipe List Container</h1>
+                <RecipeListContainer />
             </div>
         )
     }
