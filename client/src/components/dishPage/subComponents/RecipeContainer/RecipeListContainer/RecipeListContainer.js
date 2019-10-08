@@ -10,11 +10,26 @@ class RecipeListContainer extends Component {
         //check out how to access user recipe images
         return (
             <div className={styles.recipeListContainer}>
-                <RecipeComponent />
-                <RecipeComponent />
-                <RecipeComponent />
-                <RecipeComponent />
-                <RecipeComponent />
+                <RecipeComponent 
+                    recipeImage="https://www.edamam.com/web-img/8c3/8c32f359fc50fd6b86cff8d6511bfb46.jpg"
+                    recipeName="Title Here"
+                />
+                <RecipeComponent 
+                    recipeImage="https://www.edamam.com/web-img/8c3/8c32f359fc50fd6b86cff8d6511bfb46.jpg"
+                    recipeName="Title Here"
+                />
+                <RecipeComponent 
+                    recipeImage="https://www.edamam.com/web-img/8c3/8c32f359fc50fd6b86cff8d6511bfb46.jpg"
+                    recipeName="Title Here"
+                />
+                <RecipeComponent 
+                    recipeImage="https://www.edamam.com/web-img/8c3/8c32f359fc50fd6b86cff8d6511bfb46.jpg"
+                    recipeName="Title Here"
+                />
+                <RecipeComponent 
+                    recipeImage="https://www.edamam.com/web-img/8c3/8c32f359fc50fd6b86cff8d6511bfb46.jpg"
+                    recipeName="Title Here"
+                />
             </div>
         )
     }
