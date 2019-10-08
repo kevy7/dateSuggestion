@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import styles from './RecipeComponents.module.css';
 
@@ -7,12 +7,23 @@ import styles from './RecipeComponents.module.css';
 
 const RecipeComponents = (state) => {
     const imageSrc = "https://www.edamam.com/web-img/8c3/8c32f359fc50fd6b86cff8d6511bfb46.jpg"; //this should be retrieved via a prop
+    const imageStyle = {
+        backgroundImage: `url(${imageSrc})`
+    }
 
     return (
-        <div className="RecipeComponent">
-            <img src={imageSrc} className={styles.recipeImage} />
+        <div className={styles.recipeComponent} /* style={imageStyle} */>
+            <img src={state.recipeImage} className={styles.recipeImage} />
+            <h3 className={styles.recipeTitle}>{state.recipeName}</h3>
         </div>
     )
 }
+
+RecipeComponents.propTypes = {
+    recipeImage: PropTypes.string,
+    recipeName: PropTypes.string,
+}
+
+
 
 export default RecipeComponents;
