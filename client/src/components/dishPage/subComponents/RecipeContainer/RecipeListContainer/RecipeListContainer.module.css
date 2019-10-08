@@ -1,0 +1,4 @@
+.recipeListContainer {
+    display: flex;
+    flex-direction: row;
+}
