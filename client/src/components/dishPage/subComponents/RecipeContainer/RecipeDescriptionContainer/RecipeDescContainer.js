@@ -6,7 +6,8 @@ class RecipeDescContainer extends Component {
     render(){
         return (
             <div className="RecipeDescContainer">
-
+                <h1>Recipe Description will go below here</h1>
+                
             </div>
         )
     }
