@@ -8,6 +8,7 @@ import RecipeComponent from './RecipeComponents/RecipeComponents'; //components 
 class RecipeListContainer extends Component {
     render(){
         //check out how to access user recipe images
+        //this.props.userRecipes
         return (
             <div className={styles.recipeListContainer}>
                 <RecipeComponent 
