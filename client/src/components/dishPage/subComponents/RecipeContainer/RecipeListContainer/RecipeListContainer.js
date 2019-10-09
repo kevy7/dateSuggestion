@@ -8,7 +8,7 @@ import RecipeComponent from './RecipeComponents/RecipeComponents'; //components 
 class RecipeListContainer extends Component {
     render(){
         //check out how to access user recipe images
-        //this.props.userRecipes
+        //this.props.userRecipes --> after a foreach .recipe.label <-- this will give us the recipe's name
         return (
             <div className={styles.recipeListContainer}>
                 <RecipeComponent 
@@ -38,7 +38,7 @@ class RecipeListContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        userRecipes: state.userRecipes //state.userRecipes.user_recipes will give us an array of user's recipes
+        userRecipes: state.userRecipes.user_recipes //state.userRecipes.user_recipes will give us an array of user's recipes
     }
 }
 
