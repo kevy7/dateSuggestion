@@ -14,7 +14,7 @@ const RecipeComponents = (state) => {
     return (
         <div className={styles.recipeComponent} /* style={imageStyle} */>
             <img src={state.recipeImage} className={styles.recipeImage} />
-            <h3 className={styles.recipeTitle}>{state.recipeName}</h3>
+            <p className={styles.recipeTitle}>{state.recipeName}</p>
         </div>
     )
 }

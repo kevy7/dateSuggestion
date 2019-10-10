@@ -1,5 +1,5 @@
 .recipeComponent {
-    
+    width: 250px;
 }
 
 .recipeComponent::before{
@@ -8,6 +8,10 @@
 
 .recipeTitle {
     text-align: center;
+    white-space: nowrap;
+    width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .recipeImage {
