@@ -198,7 +198,9 @@ router.get('/api/dishes/recipes', (req, res) => {
         params: {
             app_id: process.env.REACT_APP_edamam_app_id, //Set these up as environment variables
             app_key: process.env.REACT_APP_edamam_app_key, //Set these up as environment variables
-            q: req.query.userDish //The user's selected dish
+            q: req.query.userDish, //The user's selected dish
+            from: 0,
+            to: 5
         }
     }
 

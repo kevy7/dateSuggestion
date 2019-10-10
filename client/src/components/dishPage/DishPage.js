@@ -12,7 +12,7 @@ class DishPage extends Component {
 
     componentDidMount = () => {
         const userDish = this.props.match.params.id;
-        //this.props.getRecipes(userDish);
+        this.props.getRecipes(userDish);
 
         console.log("recipes action will not be initiated at this moment.");
 
