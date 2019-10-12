@@ -11,7 +11,11 @@ class RecipeComponents extends Component {
     //"/dishes/:id/recipes/:recipe"
 
     ClickMe = () => {
-        alert("You clicked on me!!");
+        const selectedRecipe = {
+            recipeName: this.props.recipeName,
+            url: this.props.url,
+            ingredients: this.props.ingredients
+        }
     }
 
     render(){
@@ -21,6 +25,8 @@ class RecipeComponents extends Component {
             backgroundImage: `url(${imageSrc})`
         } */
         const url = "/dishes/" + this.props.match.params.id + "/recipes/" + this.props.recipeName;
+
+        console.log(this.props.ingredients);
 
 
         return (

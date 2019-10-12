@@ -22,6 +22,7 @@ class RecipeListContainer extends Component {
         return (
             <div className={styles.recipeListContainer}>
                 {recipesList}
+
                 <RecipeComponent 
                     recipeImage="https://www.edamam.com/web-img/8c3/8c32f359fc50fd6b86cff8d6511bfb46.jpg"
                     recipeName="Title Here"
@@ -42,6 +43,7 @@ class RecipeListContainer extends Component {
                     recipeImage="https://www.edamam.com/web-img/8c3/8c32f359fc50fd6b86cff8d6511bfb46.jpg"
                     recipeName="Title Here"
                 />
+                
             </div>
         )
     }
