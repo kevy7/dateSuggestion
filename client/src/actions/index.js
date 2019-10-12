@@ -136,3 +136,10 @@ export const getRecipes = (userDishes) => dispatch => {
         })
     })
 }
+
+//Create an action to select a recipe
+export const selectRecipe = () => dispatch => {
+
+    
+
+}
