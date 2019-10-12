@@ -138,7 +138,18 @@ export const getRecipes = (userDishes) => dispatch => {
 }
 
 //Create an action to select a recipe
-export const selectRecipe = () => dispatch => {
+export const selectRecipe = (selectedRecipe) => dispatch => {
+
+    //selectedDish will be an object that contains the following
+    /*
+        {
+
+        }
+    */
+
+    dispatch({
+        type: LOAD_COMPONENT
+    });
 
     
 
