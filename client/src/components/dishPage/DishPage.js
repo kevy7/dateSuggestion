@@ -25,7 +25,7 @@ class DishPage extends Component {
                 <BreadCrumb />
 
                 {/* Nested routes are listed below */}
-                <Route exact path="/dishes/:id/recipes" component={RecipeContainer}/>
+                <Route path="/dishes/:id/recipes" component={RecipeContainer}/>
 
             </div>
         )
