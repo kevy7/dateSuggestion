@@ -15,6 +15,7 @@ class RecipeListContainer extends Component {
                 recipeImage={recipe.recipe.image}
                 recipeName={recipe.recipe.label}
                 ingredients={recipe.recipe.ingredientLines}
+                url={recipe.recipe.url}
             />
         })
 

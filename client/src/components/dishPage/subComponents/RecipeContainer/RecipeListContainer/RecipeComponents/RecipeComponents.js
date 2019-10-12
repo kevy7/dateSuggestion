@@ -22,6 +22,8 @@ const RecipeComponents = (state) => {
 RecipeComponents.propTypes = {
     recipeImage: PropTypes.string,
     recipeName: PropTypes.string,
+    url: PropTypes.string,
+    ingredients: PropTypes.array
 }
 
 
