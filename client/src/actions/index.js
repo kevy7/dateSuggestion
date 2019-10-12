@@ -152,7 +152,15 @@ export const selectRecipe = (selectedRecipe) => dispatch => {
         type: LOAD_COMPONENT
     });
 
-    
+    //if there is something in selectedRecicpe, then do something below
+    if(selectedRecipe){
+        dispatch({
+            type: SELECT_RECIPE,
+            payload: selectedRecipe
+        })
+    }
+
+
 
 
 
