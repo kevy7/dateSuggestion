@@ -152,6 +152,8 @@ export const selectRecipe = (selectedRecipe) => dispatch => {
         type: LOAD_COMPONENT
     });
 
+    
+
 
 
 }
