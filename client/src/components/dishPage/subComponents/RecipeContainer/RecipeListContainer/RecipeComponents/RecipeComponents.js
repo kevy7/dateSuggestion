@@ -16,6 +16,8 @@ class RecipeComponents extends Component {
             url: this.props.url,
             ingredients: this.props.ingredients
         }
+
+        this.props.selectRecipe(selectedRecipe); //Recipe will be selected and returned
     }
 
     render(){
