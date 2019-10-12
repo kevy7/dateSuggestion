@@ -6,7 +6,8 @@ import { LOGIN_USER,
         SET_CURRENT_ERROR,
         LOAD_COMPONENT,
         GET_USER_DISHES,
-        GET_USER_RECIPES
+        GET_USER_RECIPES,
+        SELECT_RECIPE
 } from './types';
 
 //action to regiser user
@@ -151,6 +152,6 @@ export const selectRecipe = (selectedRecipe) => dispatch => {
         type: LOAD_COMPONENT
     });
 
-    
+
 
 }
