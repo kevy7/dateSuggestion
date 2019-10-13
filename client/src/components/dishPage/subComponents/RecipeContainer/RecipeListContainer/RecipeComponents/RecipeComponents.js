@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import { selectRecipe } from '../../../../../../actions';
 import styles from './RecipeComponents.module.css';
@@ -50,6 +51,14 @@ RecipeComponents.propTypes = {
     ingredients: PropTypes.array
 }
 
+const mapStateToProps = (state) => {
+    return {
+
+    }
+}
 
 
-export default withRouter(RecipeComponents);
+
+export default withRouter(connect(mapStateToProps, {
+    selectRecipe: selectRecipe
+})(RecipeComponents));
