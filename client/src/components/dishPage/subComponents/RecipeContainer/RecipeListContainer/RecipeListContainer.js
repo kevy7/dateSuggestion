@@ -19,30 +19,50 @@ class RecipeListContainer extends Component {
             />
         })
 
+        //remove this later. This is only for developement
+        const ingredientTest = [
+            'ingredient 1',
+            'ingredient 2',
+            'ingredient 3',
+            'ingredient 4',
+            'ingredient 5'
+        ]
+
+
         return (
             <div className={styles.recipeListContainer}>
                 {recipesList}
 
-                {/* <RecipeComponent 
+                <RecipeComponent 
                     recipeImage="https://www.edamam.com/web-img/8c3/8c32f359fc50fd6b86cff8d6511bfb46.jpg"
                     recipeName="Title Here"
+                    ingredients={ingredientTest}
+                    url="testing url"
                 />
                 <RecipeComponent 
                     recipeImage="https://www.edamam.com/web-img/8c3/8c32f359fc50fd6b86cff8d6511bfb46.jpg"
                     recipeName="Title Here"
+                    ingredients={ingredientTest}
+                    url="testing url"
                 />
                 <RecipeComponent 
                     recipeImage="https://www.edamam.com/web-img/8c3/8c32f359fc50fd6b86cff8d6511bfb46.jpg"
                     recipeName="Title Here"
+                    ingredients={ingredientTest}
+                    url="testing url"
                 />
                 <RecipeComponent 
                     recipeImage="https://www.edamam.com/web-img/8c3/8c32f359fc50fd6b86cff8d6511bfb46.jpg"
                     recipeName="Title Here"
+                    ingredients={ingredientTest}
+                    url="testing url"
                 />
                 <RecipeComponent 
                     recipeImage="https://www.edamam.com/web-img/8c3/8c32f359fc50fd6b86cff8d6511bfb46.jpg"
                     recipeName="Title Here"
-                /> */}
+                    ingredients={ingredientTest}
+                    url="testing url"
+                />
 
             </div>
         )

@@ -3,7 +3,9 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class RecipeDescContainer extends Component {
+
     render(){
+        console.log(this.props.selectedRecipe);
         return (
             <div className="RecipeDescContainer">
                 <hr />
@@ -16,13 +18,16 @@ class RecipeDescContainer extends Component {
                         <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
-                    <div className="card-footer text-muted">
-                        2 days ago
-                    </div>
                 </div>
             </div>
         )
     }
 }
 
-export default withRouter(connect()(RecipeDescContainer));
+const mapStateToProps = (state) => {
+    return {
+        selectedRecipe: state.selectedRecipe.selectedRecipe
+    }
+}
+
+export default withRouter(connect(mapStateToProps)(RecipeDescContainer));

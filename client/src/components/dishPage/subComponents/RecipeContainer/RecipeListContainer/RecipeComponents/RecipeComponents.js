@@ -29,9 +29,6 @@ class RecipeComponents extends Component {
         } */
         const url = "/dishes/" + this.props.match.params.id + "/recipes/" + this.props.recipeName;
 
-        console.log(this.props.ingredients);
-
-
         return (
             <div className={styles.recipeComponent} /* style={imageStyle} */>
                 <Link to={url} onClick={this.ClickMe}>
