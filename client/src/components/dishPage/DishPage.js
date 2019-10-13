@@ -12,7 +12,7 @@ class DishPage extends Component {
 
     componentDidMount = () => {
         const userDish = this.props.match.params.id;
-        this.props.getRecipes(userDish);
+        //this.props.getRecipes(userDish);
 
         console.log("recipes action will not be initiated at this moment.");
 
@@ -39,7 +39,7 @@ DishPage.propTypes = {
 const mapStateToProps = (state) => {
     return {
         errors: state.errors,
-        userRecipes: state.userRecipes //This should return us the array of recipes
+        userRecipes: state.userRecipes.user_recipes //This should return us the array of recipes
     }
 }
 
