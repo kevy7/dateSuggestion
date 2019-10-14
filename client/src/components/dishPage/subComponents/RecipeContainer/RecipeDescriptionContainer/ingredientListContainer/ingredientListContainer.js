@@ -8,20 +8,15 @@ import styles from './ingredientListContainer.module.css';
 class IngredientListContainer extends Component {
     render(){
 
+        let count = 0;
+
         const ingItems = this.props.ingredients.map(ingredient => {
-            
+            return <p key={count++}>{ingredient}</p>
         })
 
-        console.log(this.props.ingredients);
         return (
             <div className={styles.ingredientListContainer}>
-                
-                <p>Item 1. sdfldsnfdsk fsd fdskf ldksfn dslf ldsknf dslkf dslf s</p>
-                <p>Item 1</p>
-                <p>Item 1</p>
-                <p>Item 1</p>
-                <p>Item 1</p>
-
+                {ingItems}
             </div>
         )
     }
