@@ -7,8 +7,9 @@ import IngredientListContainer from './ingredientListContainer/ingredientListCon
 class RecipeDescContainer extends Component {
 
     render(){
-        console.log(this.props.selectedRecipe);
-        console.log(this.props.match.params.recipe)
+        //console.log(this.props.selectedRecipe);
+        //console.log(this.props.match.params.recipe);
+
         return (
             <div className="RecipeDescContainer">
                 <hr />
@@ -20,6 +21,9 @@ class RecipeDescContainer extends Component {
                         <h5 className="card-title">{this.props.selectedRecipe.recipeName}</h5>
 
                         <h5 className="card-title">Ingredients</h5>
+                        <IngredientListContainer 
+                            ingredients={this.props.selectedRecipe.ingredients}
+                        />
                         {/* ingredientListContainer will be placed in here */}
 
                         <a href="#" class="btn btn-primary">Link to source</a>
