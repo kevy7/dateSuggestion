@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import IngredientListContainer from './ingredientListContainer/ingredientListContainer';
@@ -9,6 +9,7 @@ class RecipeDescContainer extends Component {
     render(){
         //console.log(this.props.selectedRecipe);
         //console.log(this.props.match.params.recipe);
+        const url = "";
 
         return (
             <div className="RecipeDescContainer">
@@ -26,7 +27,7 @@ class RecipeDescContainer extends Component {
                         />
                         {/* ingredientListContainer will be placed in here */}
 
-                        <a href="#" class="btn btn-primary">Link to source</a>
+                        <Link to={this.props.selectedRecipe.url} class="btn btn-primary">Link to source</Link>
                     </div>
                 </div>
             </div>

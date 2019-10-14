@@ -15,7 +15,7 @@ class DishPage extends Component {
         const userDish = this.props.match.params.id;
         //this.props.getRecipes(userDish);
         if(isEmpty(this.props.userRecipes) == true){
-            this.props.getRecipes(userDish);
+            //this.props.getRecipes(userDish);
             console.log("this is being called")
         }
     }
