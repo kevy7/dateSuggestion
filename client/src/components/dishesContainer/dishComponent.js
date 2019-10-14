@@ -8,7 +8,7 @@ const DishComponent = (state) => {
     const style = {
         height: '100%'
     }
-    const url = "/dishes/" + state.dish_name;
+    const url = "/dishes/" + state.dish_name + "/Recipes";
     return (
         <div className={styles.dishComponent}>
             <div className="card" style={style} /*className={styles.card}*/ >
