@@ -7,6 +7,11 @@ import styles from './ingredientListContainer.module.css';
 
 class IngredientListContainer extends Component {
     render(){
+
+        const ingItems = this.props.ingredients.map(ingredient => {
+            
+        })
+
         console.log(this.props.ingredients);
         return (
             <div className={styles.ingredientListContainer}>
