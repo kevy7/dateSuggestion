@@ -9,8 +9,6 @@ class RecipeDescContainer extends Component {
     render(){
         //console.log(this.props.selectedRecipe);
         //console.log(this.props.match.params.recipe);
-        const url = "";
-
         return (
             <div className="RecipeDescContainer">
                 <hr />
