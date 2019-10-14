@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import isEmpty from 'is-empty';
 
 import styles from './DishPage.module.css';
 import { getRecipes } from '../../actions/index';
@@ -13,12 +14,14 @@ class DishPage extends Component {
     componentDidMount = () => {
         const userDish = this.props.match.params.id;
         //this.props.getRecipes(userDish);
-
-        console.log("recipes action will not be initiated at this moment.");
-
+        if(isEmpty(this.props.userRecipes) == true){
+            this.props.getRecipes(userDish);
+            console.log("this is being called")
+        }
     }
 
     render(){
+        //console.log(this.props.userRecipes);
         return(
             <div className={styles.dishPage}>
                 <h1 className={styles.dishTitle}>{this.props.match.params.id}</h1>
