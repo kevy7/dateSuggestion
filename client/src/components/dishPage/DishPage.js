@@ -30,7 +30,7 @@ class DishPage extends Component {
 
                 {/* Nested routes are listed below */}
                 <Route path="/dishes/:id/recipes" component={RecipeContainer}/>
-
+                <Route path="/dishes/:id/Restaurants" component={RestaurantsContainer}/>
             </div>
         )
     }
