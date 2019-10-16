@@ -8,6 +8,7 @@ import styles from './DishPage.module.css';
 import { getRecipes } from '../../actions/index';
 import BreadCrumb from './subComponents/BreadCrumb/BreadCrumb';
 import RecipeContainer from './subComponents/RecipeContainer/RecipeContainer';
+import RestaurantsContainer from './subComponents/RestaurantsContainer/RestaurantsContainer';
 
 class DishPage extends Component {
 
