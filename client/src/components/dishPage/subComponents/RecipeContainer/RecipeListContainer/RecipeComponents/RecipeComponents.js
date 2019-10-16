@@ -42,10 +42,13 @@ class RecipeComponents extends Component {
 }
 
 RecipeComponents.propTypes = {
-    recipeImage: PropTypes.string,
-    recipeName: PropTypes.string,
-    url: PropTypes.string,
-    ingredients: PropTypes.array
+    recipeImage: PropTypes.string, //update these props to image
+    recipeName: PropTypes.string, //update to name
+    url: PropTypes.string, 
+    ingredients: PropTypes.array //update to 
+    //include location for Business/restaurants
+    // include rating
+
 }
 
 const mapStateToProps = (state) => {
