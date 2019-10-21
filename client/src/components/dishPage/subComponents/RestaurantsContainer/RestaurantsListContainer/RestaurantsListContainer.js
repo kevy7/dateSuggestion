@@ -3,6 +3,7 @@ import { withRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class RestaurantsListContainer extends Component {
+    //Container will be placed in here
     render(){
         return (
             <div className="RestListContainer">
