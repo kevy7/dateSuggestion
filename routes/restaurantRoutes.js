@@ -54,9 +54,9 @@ router.get('/api/dishes/restaurants', (req, res) => {
         parameter, 
         config
     ).then(response => {
-
+        console.log(response.data);
     }).catch(error => {
-
+        res.send(error);
     })
 
 
