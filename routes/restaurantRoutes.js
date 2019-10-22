@@ -44,10 +44,22 @@ router.get('/api/dishes/restaurants', (req, res) => {
     //How to pass in parameters using axios
     const parameter = {
         params: {
-            location: 'Portland',
-            term: 'pho'
+            location: req.query.location,
+            term: req.query.userDish
         }
     }
 
-    
-})
+    axios.get(
+        'https://api.yelp.com/v3/businesses/search', 
+        parameter, 
+        config
+    ).then(response => {
+
+    }).catch(error => {
+
+    })
+
+
+});
+
+module.exports = router;
