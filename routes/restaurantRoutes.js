@@ -15,17 +15,6 @@ const pool = new Pool({
 //Route for getting a list of restaurants
 router.get('/api/dishes/restaurants', (req, res) => {
 
-    console.log("this route is being run");
-    console.log(process.env.YELP_API_KEY);
-
-    console.log(req.query.userDish);
-
-    //research the yelp restuarants api
-
-    /* let config = {
-        headers: {'Authorization': 'bearer ' + process.env.YELP_API_KEY}
-    } */
-
     //How to pass in parameters using axios
     const parameter = {
         headers: {'Authorization': 'bearer ' + process.env.YELP_API_KEY},
@@ -34,8 +23,6 @@ router.get('/api/dishes/restaurants', (req, res) => {
             term: req.query.userDish
         }
     }
-
-
 
     axios.get(
         'https://api.yelp.com/v3/businesses/search', 
