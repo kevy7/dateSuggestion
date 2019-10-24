@@ -164,7 +164,7 @@ export const selectRecipe = (selectedRecipe) => dispatch => {
 
 }
 
-export const selectRestaurant = (userData) => {
+export const selectRestaurant = (userData) => dispatch => {
     dispatch({
         type: LOAD_COMPONENT
     })
