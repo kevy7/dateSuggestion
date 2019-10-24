@@ -7,7 +7,8 @@ import { LOGIN_USER,
         LOAD_COMPONENT,
         GET_USER_DISHES,
         GET_USER_RECIPES,
-        SELECT_RECIPE
+        SELECT_RECIPE,
+        SELECT_RESTAURANT
 } from './types';
 
 //action to regiser user
@@ -161,4 +162,18 @@ export const selectRecipe = (selectedRecipe) => dispatch => {
     }
 
 
+}
+
+export const selectRestaurant = (selectedRestaurant) => {
+    dispatch({
+        type: LOAD_COMPONENT
+    })
+
+    axios.get('/api/dishes/restaurants', selectRestaurant)
+    .then(response => {
+
+    })
+    .catch(err => {
+        
+    })
 }
