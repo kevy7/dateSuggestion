@@ -7,10 +7,17 @@ const initialState = {
 
 const getUserRestaReducer = (state=initialState, action) => {
     if(action.type === LOAD_COMPONENT){
-
+        return {
+            ...state,
+            loading: true
+        }
     }
     else if (action.type === SELECT_RESTAURANT){
-
+        return {
+            ...state,
+            loading: false,
+            restaurants: action.payload
+        }
     }
     else {
         return {
