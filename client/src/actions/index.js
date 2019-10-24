@@ -164,16 +164,24 @@ export const selectRecipe = (selectedRecipe) => dispatch => {
 
 }
 
-export const selectRestaurant = (selectedRestaurant) => {
+export const selectRestaurant = (userData) => {
     dispatch({
         type: LOAD_COMPONENT
     })
 
-    axios.get('/api/dishes/restaurants', selectRestaurant)
+    axios.get('/api/dishes/restaurants', {
+        params: {
+            userDish: userData.userDish,
+            location: userData.location
+        }
+    })
     .then(response => {
-
+        //dispatch response here
     })
     .catch(err => {
-        
+        dispatch({
+            type: SET_CURRENT_ERROR,
+            payload: err
+        })
     })
 }
