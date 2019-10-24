@@ -6,7 +6,17 @@ const initialState = {
 }
 
 const getUserRestaReducer = (state=initialState, action) => {
-    
+    if(action.type === LOAD_COMPONENT){
+
+    }
+    else if (action.type === SELECT_RESTAURANT){
+
+    }
+    else {
+        return {
+            ...state
+        }
+    }
 }
 
 export default getUserRestaReducer;
