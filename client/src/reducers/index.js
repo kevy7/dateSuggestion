@@ -10,6 +10,7 @@ import getUserDishes from './getUserDishes';
 import setCurrentError from './setCurrentError';
 import getUserRecipes from './getUserRecipes';
 import selectedRecipe from './selectRecipe';
+import getUserRestaurants from './getUserRestaurants';
 
 export default combineReducers({
     //reducer info will be placed in here
@@ -17,5 +18,6 @@ export default combineReducers({
     userDishes: getUserDishes,
     errors: setCurrentError,
     userRecipes: getUserRecipes,
-    selectedRecipe: selectedRecipe
+    selectedRecipe: selectedRecipe,
+    restaurants: getUserRestaurants
 });
