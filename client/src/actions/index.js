@@ -179,7 +179,8 @@ export const selectRestaurant = (userData) => dispatch => {
     .then(response => {
         //dispatch response here
         dispatch({
-
+            type: GET_RESTAURANTS,
+            payload: response.data
         })
     })
     .catch(err => {
