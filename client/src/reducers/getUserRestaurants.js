@@ -1,4 +1,4 @@
-import { SELECT_RESTAURANT, LOAD_COMPONENT } from '../actions/types';
+import { GET_RESTAURANTS, LOAD_COMPONENT } from '../actions/types';
 
 const initialState = {
     restaurants: {},
@@ -12,7 +12,7 @@ const getUserRestaReducer = (state=initialState, action) => {
             loading: true
         }
     }
-    else if (action.type === SELECT_RESTAURANT){
+    else if (action.type === GET_RESTAURANTS){
         return {
             ...state,
             loading: false,

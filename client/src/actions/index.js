@@ -8,7 +8,8 @@ import { LOGIN_USER,
         GET_USER_DISHES,
         GET_USER_RECIPES,
         SELECT_RECIPE,
-        SELECT_RESTAURANT
+        SELECT_RESTAURANT,
+        GET_RESTAURANTS
 } from './types';
 
 //action to regiser user
@@ -177,6 +178,9 @@ export const selectRestaurant = (userData) => dispatch => {
     })
     .then(response => {
         //dispatch response here
+        dispatch({
+
+        })
     })
     .catch(err => {
         dispatch({
