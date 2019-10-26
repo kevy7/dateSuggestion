@@ -1,7 +1,7 @@
 import { GET_RESTAURANTS, LOAD_COMPONENT } from '../actions/types';
 
 const initialState = {
-    restaurants: {},
+    restaurants: [],
     loading: false
 }
 

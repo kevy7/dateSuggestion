@@ -28,7 +28,7 @@ router.get('/api/dishes/restaurants', (req, res) => {
         'https://api.yelp.com/v3/businesses/search', 
         parameter
     ).then(response => {
-        res.send(response.data);
+        res.send(response.data.businesses);
     }).catch(error => {
         res.send(error);
     })
