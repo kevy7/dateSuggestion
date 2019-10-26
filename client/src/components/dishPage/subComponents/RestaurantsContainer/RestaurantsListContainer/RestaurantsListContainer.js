@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-
+import { getRestaurants } from '../../../../../actions/index';
 
 class RestaurantsListContainer extends Component {
     //Container will be placed in here
@@ -26,5 +26,5 @@ const mapStateToProps = (state) => {
 }
 
 export default withRouter(connect(mapStateToProps, {
-
+    getRestaurants: getRestaurants
 })(RestaurantsListContainer));
