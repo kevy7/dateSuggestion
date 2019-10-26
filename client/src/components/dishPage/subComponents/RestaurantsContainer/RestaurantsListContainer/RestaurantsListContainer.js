@@ -4,10 +4,14 @@ import { connect } from 'react-redux';
 
 class RestaurantsListContainer extends Component {
     //Container will be placed in here
+    componentDidMount = () => {
+
+    }
+    
     render(){
         return (
             <div className="RestListContainer">
-                <h1>This is the RestListContainer</h1>
+                <h2>This is the RestListContainer</h2>
             </div>
         )
     }
@@ -15,7 +19,7 @@ class RestaurantsListContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-
+        restaurants: state.restaurants //will return us a list of restaurants via our api route
     }
 }
 
