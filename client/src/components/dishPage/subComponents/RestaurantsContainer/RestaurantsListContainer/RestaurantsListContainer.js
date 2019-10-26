@@ -11,7 +11,6 @@ class RestaurantsListContainer extends Component {
         const success = (pos) => {
             let coordinates = pos.coords;
 
-            //Sucesfully able to return latitude and longitude
             console.log(coordinates.latitude);
             console.log(coordinates.longitude);
             //I can create an action/reducer to get the current location of the user 
