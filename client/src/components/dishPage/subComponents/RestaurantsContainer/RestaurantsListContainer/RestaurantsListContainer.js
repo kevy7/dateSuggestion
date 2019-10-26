@@ -8,17 +8,22 @@ class RestaurantsListContainer extends Component {
     //Container will be placed in here
     componentDidMount = () => {
 
-        const success = () => {
+        const success = (pos) => {
+            let coordinates = pos.coords;
 
+            //Sucesfully able to return latitude and longitude
+            console.log(coordinates.latitude);
+            console.log(coordinates.longitude);
+            //I can create an action/reducer to get the current location of the user 
         }
 
-        const error = () => {
-
+        const error = (err) => {
+            alert(err.message);
         }
 
         navigator.geolocation.getCurrentPosition(success, error);
 
-        
+
         const userData = {
             userDish: this.props.match.params.id, //This will give us the selected dish name from the url
             location: '', //Find out how to get the user's current location
