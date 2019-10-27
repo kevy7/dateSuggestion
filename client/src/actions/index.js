@@ -173,7 +173,7 @@ export const getRestaurants = (userData) => dispatch => {
     axios.get('/api/dishes/restaurants', {
         params: {
             userDish: userData.userDish,
-            location: userData.location,
+            /* location: userData.location, */
             latitude: userData.latitude,
             longitude: userData.longitude
         }

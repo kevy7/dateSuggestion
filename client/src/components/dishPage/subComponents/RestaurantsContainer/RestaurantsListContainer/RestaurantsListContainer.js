@@ -13,17 +13,14 @@ class RestaurantsListContainer extends Component {
 
             const userData = {
                 userDish: this.props.match.params.id, //This will give us the selected dish name from the url
-                location: '', //Find out how to get the user's current location
-                /* //Should start thinking about using these two
-                latitude: '',
-                longitude: ''
-            */
+                /* location: '', */
+                latitude: coordinates.latitude,
+                longitude: coordinates.longitude
             }
 
+            //action will be called in here
 
-            console.log(coordinates.latitude);
-            console.log(coordinates.longitude);
-            //I can create an action/reducer to get the current location of the user 
+
         }
 
         const error = (err) => {
@@ -32,16 +29,6 @@ class RestaurantsListContainer extends Component {
 
         navigator.geolocation.getCurrentPosition(success, error);
 
-        const userData = {
-            userDish: this.props.match.params.id, //This will give us the selected dish name from the url
-            location: '', //Find out how to get the user's current location
-            /* //Should start thinking about using these two
-            latitude: '',
-            longitude: ''
-            */
-        }
-
-        //console.log(this.props.match.params.id);
     }
 
     render(){
