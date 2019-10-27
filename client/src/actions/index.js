@@ -174,8 +174,8 @@ export const getRestaurants = (userData) => dispatch => {
         params: {
             userDish: userData.userDish,
             location: userData.location,
-            latitude: '',
-            longitude: ''
+            latitude: userData.latitude,
+            longitude: userData.longitude
         }
     })
     .then(response => {

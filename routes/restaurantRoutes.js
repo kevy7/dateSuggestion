@@ -20,7 +20,9 @@ router.get('/api/dishes/restaurants', (req, res) => {
         headers: {'Authorization': 'bearer ' + process.env.YELP_API_KEY},
         params: {
             location: req.query.location,
-            term: req.query.userDish
+            term: req.query.userDish,
+            latitude: req.query.latitude,
+            longitude: req.query.longitude
         }
     }
 
