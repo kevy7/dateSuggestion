@@ -3,6 +3,7 @@ import { withRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { getRestaurants } from '../../../../../actions/index';
+import Spinner from '../../../../loadingComponents/Spinner/Spinner';
 
 class RestaurantsListContainer extends Component {
     //Container will be placed in here
@@ -18,8 +19,10 @@ class RestaurantsListContainer extends Component {
                 longitude: coordinates.longitude
             }
 
+            //ACTION CALL HERE
             //action will be called in here
-            this.props.getRestaurants(userData);//The action call in here works!! we were able to retrieve the user's location
+
+            //this.props.getRestaurants(userData);//The action call in here works!! we were able to retrieve the user's location
 
         }
 
@@ -32,9 +35,15 @@ class RestaurantsListContainer extends Component {
     }
 
     render(){
+
+        if(this.props.restaurants.loading == true){
+            return <Spinner />
+        }
+
         return (
             <div className="RestListContainer">
                 <h2>This is the RestaListContainer</h2>
+                <Spinner />
             </div>
         )
     }
