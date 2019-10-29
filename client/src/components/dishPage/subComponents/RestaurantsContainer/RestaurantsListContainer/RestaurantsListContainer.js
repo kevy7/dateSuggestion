@@ -22,7 +22,7 @@ class RestaurantsListContainer extends Component {
             //ACTION CALL HERE
             //action will be called in here
 
-            //this.props.getRestaurants(userData);//The action call in here works!! we were able to retrieve the user's location
+            this.props.getRestaurants(userData);//The action call in here works!! we were able to retrieve the user's location
 
         }
 
