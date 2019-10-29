@@ -9,19 +9,25 @@ import { getRecipes } from '../../actions/index';
 import BreadCrumb from './subComponents/BreadCrumb/BreadCrumb';
 import RecipeContainer from './subComponents/RecipeContainer/RecipeContainer';
 import RestaurantsContainer from './subComponents/RestaurantsContainer/RestaurantsContainer';
+import Spinner from '../loadingComponents/Spinner/Spinner';
 
 class DishPage extends Component {
 
     componentDidMount = () => {
         const userDish = this.props.match.params.id;
         //this.props.getRecipes(userDish);
-        if(isEmpty(this.props.userRecipes) == true){
-            //this.props.getRecipes(userDish);
+
+        //look into ways to make this better
+        if(isEmpty(this.props.userRecipes.user_recipes) == true){
+            this.props.getRecipes(userDish);
             console.log("this is being called")
         }
     }
 
     render(){
+        /* if(this.props.userRecipes.loading == true) {
+            return <Spinner />
+        } */
         //console.log(this.props.userRecipes);
         return(
             <div className={styles.dishPage}>
@@ -43,7 +49,7 @@ DishPage.propTypes = {
 const mapStateToProps = (state) => {
     return {
         errors: state.errors,
-        userRecipes: state.userRecipes.user_recipes //This should return us the array of recipes
+        userRecipes: state.userRecipes //This should return us the array of recipes
     }
 }
 
