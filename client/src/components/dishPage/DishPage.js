@@ -24,8 +24,10 @@ class DishPage extends Component {
         }
     }
 
-    componentDidUpdate = (nextProps) => {
-        
+    componentDidUpdate = (prevProps) => {
+        if(prevProps.userRecipes.user_recipes !== this.props.userRecipes.user_recipes){
+            console.log("it looks like there has been a change in the props!");
+        }
     }
 
     render(){
