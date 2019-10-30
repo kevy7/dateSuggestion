@@ -24,6 +24,10 @@ class DishPage extends Component {
         }
     }
 
+    componentDidUpdate = (nextProps) => {
+        
+    }
+
     render(){
         /* if(this.props.userRecipes.loading == true) {
             return <Spinner />
