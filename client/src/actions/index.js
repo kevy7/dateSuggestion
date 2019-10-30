@@ -93,14 +93,14 @@ export const inputDish = (dishInfo) => dispatch => {
 
 //Action used to get the user's list of dishes
 export const getUserDishesAction = () => dispatch => {
-    
+
     dispatch({
         type: LOAD_COMPONENT
     });
 
     axios.get("/api/user/dishes")
     .then(res => {
-        console.log(process.env.REACT_APP_edamam_app_id);
+        //console.log(process.env.REACT_APP_edamam_app_id);
         dispatch({
             type: GET_USER_DISHES,
             payload: res.data
