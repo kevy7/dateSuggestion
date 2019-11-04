@@ -6,7 +6,17 @@ const initialState = {
 }
 
 const selectDish = (state=initialState, action) => {
-
+    if(action.type === SELECT_DISH){
+        return {
+            ...state,
+            selectDish: action.payload
+        }
+    }
+    else {
+        return {
+            ...state
+        }
+    }
 }
 
 export default selectDish;
