@@ -9,10 +9,17 @@ import { selectDish } from '../../actions/index';
 
 class DishComponent extends Component {
     render(){
+
         const style = {
             height: '100%'
         }
+
         const url = "/dishes/" + this.props.dish_name + "/Recipes";
+
+        const linkButton = () => {
+            this.props.selectDish(this.props.dish_name);
+        }
+
         return (
             <div className={styles.dishComponent}>
                 <div className="card" style={style} /*className={styles.card}*/ >
@@ -20,7 +27,7 @@ class DishComponent extends Component {
                         <div className="card-body" className={styles.card}>
                             <h5 className="card-title">{this.props.dish_name}</h5>
                             <p className="card-text">{this.props.dish_description}</p>
-                            <Link to={url} className="btn btn-primary">View Recipes and Places</Link>
+                            <Link to={url} className="btn btn-primary" onClick={linkButton}>View Recipes and Places</Link>
                         </div>
                 </div>
             </div>
@@ -41,5 +48,5 @@ const mapStateToProps = (state) => {
 }
 
 export default withRouter(connect(mapStateToProps, {
-    
+    selectDish: selectDish
 })(DishComponent));

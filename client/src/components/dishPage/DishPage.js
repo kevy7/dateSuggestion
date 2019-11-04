@@ -19,8 +19,7 @@ class DishPage extends Component {
 
         //look into ways to make this better
         if(isEmpty(this.props.userRecipes.user_recipes) == true){
-            this.props.getRecipes(userDish);
-            console.log("this is being called")
+            //this.props.getRecipes(userDish);
         }
     }
 
