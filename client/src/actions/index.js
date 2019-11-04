@@ -9,7 +9,8 @@ import { LOGIN_USER,
         GET_USER_RECIPES,
         SELECT_RECIPE,
         SELECT_RESTAURANT,
-        GET_RESTAURANTS
+        GET_RESTAURANTS,
+        SELECT_DISH
 } from './types';
 
 //action to regiser user
@@ -116,7 +117,12 @@ export const getUserDishesAction = () => dispatch => {
 
 export const selectDish = (userDish) => dispatch => {
     //Do I need to dispatch a load component here?
+    //SELECT_DISH <--- Use this action right here
+
     
+
+
+
 }
 
 //Action used to get a list of recipes via the edamam api
