@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import styles from './DishComponent.module.css';
+import { selectDish } from '../../actions/index';
 
 const DishComponent = (state) => {
     const style = {
