@@ -114,6 +114,11 @@ export const getUserDishesAction = () => dispatch => {
     });
 }
 
+export const selectDish = (userDish) => dispatch => {
+    //Do I need to dispatch a load component here?
+    
+}
+
 //Action used to get a list of recipes via the edamam api
 export const getRecipes = (userDishes) => dispatch => {
 
