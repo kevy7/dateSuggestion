@@ -119,9 +119,10 @@ export const selectDish = (userDish) => dispatch => {
     //Do I need to dispatch a load component here?
     //SELECT_DISH <--- Use this action right here
 
-    
-
-
+    dispatch({
+        type: SELECT_DISH,
+        payload: userDish
+    });
 
 }
 

@@ -9,7 +9,13 @@ const selectDish = (state=initialState, action) => {
     if(action.type === SELECT_DISH){
         return {
             ...state,
-            selectDish: action.payload
+            selectedDish: action.payload
+        }
+    }
+    else if (action.payload === LOAD_COMPONENT){
+        return {
+            ...state,
+            loading: false
         }
     }
     else {
