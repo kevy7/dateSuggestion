@@ -57,7 +57,8 @@ DishPage.propTypes = {
 const mapStateToProps = (state) => {
     return {
         errors: state.errors,
-        userRecipes: state.userRecipes //This should return us the array of recipes
+        userRecipes: state.userRecipes, //This should return us the array of recipes
+        selectedDish: state.selectedDish
     }
 }
 
