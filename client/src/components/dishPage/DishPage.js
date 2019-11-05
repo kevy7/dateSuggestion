@@ -28,8 +28,8 @@ class DishPage extends Component {
             console.log("it looks like there has been a change in the props!");
         } */
 
-        console.log(prevProps.match.params.id);
-        console.log(this.props.match.params.id);
+        //console.log(prevProps.selectedDish.selectedDish);
+        //console.log(this.props.selectedDish.selectedDish);
     }
 
     render(){
