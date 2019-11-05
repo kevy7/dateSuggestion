@@ -33,7 +33,7 @@ class DishPage extends Component {
     }
 
     render(){
-        /* if(this.props.userRecipes.loading == true) {
+        /* if(this.props.userRecipes.loading === true) {
             return <Spinner />
         } */
         //console.log(this.props.userRecipes);

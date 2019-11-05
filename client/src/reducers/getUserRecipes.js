@@ -21,7 +21,8 @@ const getUserRecipes = (state=initialState, action) => {
     }
     else {
         return {
-            ...state
+            ...state,
+            loading: false
         }
     }
 }
