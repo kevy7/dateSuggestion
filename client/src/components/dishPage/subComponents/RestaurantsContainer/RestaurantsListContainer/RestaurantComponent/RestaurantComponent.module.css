@@ -1,3 +1,18 @@
 .restaImage {
-    
+    width: 250px;
+    height: 250px;
+}
+
+.restaTitle {
+    text-align: center;
+    white-space: nowrap;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.restaComponent {
+    width: 250px;
 }

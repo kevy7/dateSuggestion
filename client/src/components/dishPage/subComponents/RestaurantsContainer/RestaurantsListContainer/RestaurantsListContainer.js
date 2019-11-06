@@ -45,7 +45,10 @@ class RestaurantsListContainer extends Component {
 
         return (
             <div className="RestListContainer">
-                <h2>This is the RestaListContainer</h2>
+                <RestaurantComponent />
+                <RestaurantComponent />
+                <RestaurantComponent />
+                <RestaurantComponent />
                 <RestaurantComponent />
             </div>
         )
