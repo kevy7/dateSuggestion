@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { getRestaurants } from '../../../../../actions/index';
 import Spinner from '../../../../loadingComponents/Spinner/Spinner';
+import RestaurantComponent from './RestaurantComponent/RestaurantComponent';
 
 class RestaurantsListContainer extends Component {
     //Container will be placed in here
