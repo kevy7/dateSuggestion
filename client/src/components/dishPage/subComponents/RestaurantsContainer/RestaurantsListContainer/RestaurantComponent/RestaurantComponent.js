@@ -8,7 +8,8 @@ class RestaurantComponent extends Component {
     render(){
         return (
             <div className="restaurantComponent">
-                
+                <img src="https://images.unsplash.com/photo-1556745750-68295fefafc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
+                <p>Restaurant Title</p>
             </div>
         )
     }
