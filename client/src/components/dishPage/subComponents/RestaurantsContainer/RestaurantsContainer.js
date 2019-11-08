@@ -5,7 +5,6 @@ import RestaurantsListContainer from './RestaurantsListContainer/RestaurantsList
 const RestuarantsContainer = (state) => {
     return (
         <div className="restuarantsContainer">
-            <h1>This is a header</h1>
             <RestaurantsListContainer />
         </div>
 

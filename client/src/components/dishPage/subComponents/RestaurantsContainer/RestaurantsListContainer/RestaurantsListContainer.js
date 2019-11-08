@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import styles from './RestaurantsListContainer.module.css';
 import { getRestaurants } from '../../../../../actions/index';
 import Spinner from '../../../../loadingComponents/Spinner/Spinner';
 import RestaurantComponent from './RestaurantComponent/RestaurantComponent';
@@ -44,7 +45,7 @@ class RestaurantsListContainer extends Component {
         }
 
         return (
-            <div className="RestListContainer">
+            <div className={styles.restaListContainer}>
                 <RestaurantComponent />
                 <RestaurantComponent />
                 <RestaurantComponent />
