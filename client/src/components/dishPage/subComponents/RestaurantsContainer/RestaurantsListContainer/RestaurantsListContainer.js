@@ -46,7 +46,10 @@ class RestaurantsListContainer extends Component {
 
         return (
             <div className={styles.restaListContainer}>
-                <RestaurantComponent />
+                <RestaurantComponent 
+                    restaImage="https://images.unsplash.com/photo-1556745750-68295fefafc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                    
+                />
                 <RestaurantComponent />
                 <RestaurantComponent />
                 <RestaurantComponent />
