@@ -20,8 +20,8 @@ RestaurantComponent.propTypes = {
     restaImage: PropTypes.string,
     restaName: PropTypes.string,
     url: PropTypes.string,
-    location: PropTypes.string
-
+    location: PropTypes.string,
+    isClosed: PropTypes.bool
 }
 
 export default withRouter(connect()(RestaurantComponent));
