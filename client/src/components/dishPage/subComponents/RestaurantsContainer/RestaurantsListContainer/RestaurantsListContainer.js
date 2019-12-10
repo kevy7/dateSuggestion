@@ -53,10 +53,6 @@ class RestaurantsListContainer extends Component {
                     location=""
                     isClosed={true}
                 />
-                <RestaurantComponent />
-                <RestaurantComponent />
-                <RestaurantComponent />
-                <RestaurantComponent />
             </div>
         )
     }
