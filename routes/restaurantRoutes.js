@@ -22,7 +22,8 @@ router.get('/api/dishes/restaurants', (req, res) => {
             /* location: req.query.location, */
             term: req.query.userDish,
             latitude: req.query.latitude,
-            longitude: req.query.longitude
+            longitude: req.query.longitude,
+            limit: 5
         }
     }
 
