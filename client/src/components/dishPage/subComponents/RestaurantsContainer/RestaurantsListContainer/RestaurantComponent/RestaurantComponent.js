@@ -10,7 +10,7 @@ class RestaurantComponent extends Component {
         return (
             <div className={styles.restaComponent}>
                 <img className={styles.restaImage} src={this.props.restaImage} />
-                <p className={styles.restaTitle}>Restaurant Title</p>
+                <p className={styles.restaTitle}>{this.props.restaName}</p>
             </div>
         )
     }
@@ -20,7 +20,7 @@ RestaurantComponent.propTypes = {
     restaImage: PropTypes.string,
     restaName: PropTypes.string,
     url: PropTypes.string,
-    location: PropTypes.string,
+    location: PropTypes.string, //PropTypes.object
     isClosed: PropTypes.bool
 }
 
