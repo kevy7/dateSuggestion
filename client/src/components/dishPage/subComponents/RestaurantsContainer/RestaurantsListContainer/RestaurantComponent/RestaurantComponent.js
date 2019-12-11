@@ -13,11 +13,13 @@ class RestaurantComponent extends Component {
 
     render(){
 
-        const url = "/dishes/" + this.props.match.params.id + "/Restaurants/" + this.props.recipeName;
+        const url = "/dishes/" + this.props.match.params.id + "/Restaurants/" + this.props.restaName;
 
         return (
             <div className={styles.restaComponent}>
-                <img className={styles.restaImage} src={this.props.restaImage} />
+                <Link to={url}>
+                    <img className={styles.restaImage} src={this.props.restaImage} />
+                </Link>
                 <Link to={this.props.url}><p className={styles.restaTitle}>{this.props.restaName}</p></Link>
                 <p></p>
             </div>
