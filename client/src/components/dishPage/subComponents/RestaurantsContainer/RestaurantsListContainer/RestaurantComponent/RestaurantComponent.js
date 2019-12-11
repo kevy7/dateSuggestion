@@ -13,7 +13,7 @@ class RestaurantComponent extends Component {
 
     render(){
 
-        const url = "";
+        const url = "/dishes/" + this.props.match.params.id + "/Restaurants/" + this.props.recipeName;
 
         return (
             <div className={styles.restaComponent}>
