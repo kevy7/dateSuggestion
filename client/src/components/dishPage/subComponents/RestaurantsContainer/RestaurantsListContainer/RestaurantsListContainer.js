@@ -26,7 +26,7 @@ class RestaurantsListContainer extends Component {
             //console.log("this is being run");
 
 
-            this.props.getRestaurants(userData);//The action call in here works!! we were able to retrieve the user's location
+            //this.props.getRestaurants(userData);//The action call in here works!! we were able to retrieve the user's location
 
         }
 
@@ -42,7 +42,8 @@ class RestaurantsListContainer extends Component {
 
         let restaurantList = this.props.restaurants.restaurants.map(resta => {
             return <RestaurantComponent 
-
+                        restaImage={resta.image_url}
+                        
             />
         });
 
