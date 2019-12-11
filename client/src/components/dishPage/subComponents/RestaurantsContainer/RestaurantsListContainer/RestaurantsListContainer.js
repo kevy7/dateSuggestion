@@ -43,8 +43,11 @@ class RestaurantsListContainer extends Component {
         let restaurantList = this.props.restaurants.restaurants.map(resta => {
             return <RestaurantComponent 
                         restaImage={resta.image_url}
-                        
-            />
+                        restaName={resta.name}
+                        url={resta.url}
+                        location={resta.location}
+                        isClosed={resta.is_closed}
+                    />
         });
 
         if(this.props.restaurants.loading == true){
