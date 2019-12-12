@@ -160,13 +160,7 @@ export const getRecipes = (userDishes) => dispatch => {
 //Create an action to select a recipe
 export const selectRecipe = (selectedRecipe) => dispatch => {
 
-    //selectedDish will be an object that contains the following
-    /*
-        {
-
-        }
-    */
-
+    //Need to find an efficient way to use the LOAD_COMPONENT reducer
     /* dispatch({
         type: LOAD_COMPONENT
     }); */
@@ -178,7 +172,6 @@ export const selectRecipe = (selectedRecipe) => dispatch => {
             payload: selectedRecipe
         })
     }
-
 
 }
 
