@@ -123,6 +123,10 @@ export const selectDish = (userDish) => dispatch => {
     //SELECT_DISH <--- Use this action right here
 
     dispatch({
+        type: LOAD_DISHES
+    });
+
+    dispatch({
         type: SELECT_DISH,
         payload: userDish
     });
