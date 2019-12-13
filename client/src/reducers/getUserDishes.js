@@ -1,4 +1,4 @@
-import { GET_USER_DISHES, LOAD_COMPONENT, LOAD_DISHES } from '../actions/types';
+import { GET_USER_DISHES, SELECT_DISH, LOAD_COMPONENT, LOAD_DISHES } from '../actions/types';
 
 const initialState = {
     loading: false,
@@ -16,10 +16,17 @@ const getUserDishes = (state = initialState, action) => {
             userDishes: action.payload
         }
     }
-    else if(action.type === LOAD_COMPONENT){
+    else if(action.type === LOAD_DISHES){
         return {
             ...state,
             loading: true
+        }
+    }
+    else if(action.type === SELECT_DISH){
+        return {
+            ...state,
+            loading: false,
+            selectedDish: action.payload
         }
     }
     else {
