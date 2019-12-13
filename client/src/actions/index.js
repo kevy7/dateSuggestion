@@ -139,7 +139,7 @@ export const getRecipes = (userDishes) => dispatch => {
     //userDish will contain the user's selected dish
 
     dispatch({
-        type: LOAD_COMPONENT
+        type: LOAD_RECIPES
     });
     //Req.body is not being sent because this is a get request and not a post request
 

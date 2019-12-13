@@ -1,4 +1,4 @@
-import { GET_USER_RECIPES, LOAD_COMPONENT, LOAD_RECIPES } from '../actions/types';
+import { GET_USER_RECIPES, SELECT_RECIPE, LOAD_COMPONENT, LOAD_RECIPES } from '../actions/types';
 
 const initialState = {
     loading: false,
@@ -14,7 +14,14 @@ const getUserRecipes = (state=initialState, action) => {
             user_recipes: action.payload
         }
     }
-    else if (action.type === LOAD_COMPONENT){
+    else if (action.type === SELECT_RECIPE){
+        return {
+            ...state,
+            loading: false,
+            selectedRecipe: action.payload
+        }
+    }
+    else if (action.type === LOAD_RECIPES){
         return {
             ...state,
             loading: true
