@@ -10,7 +10,10 @@ import { LOGIN_USER,
         SELECT_RECIPE,
         SELECT_RESTAURANT,
         GET_RESTAURANTS,
-        SELECT_DISH
+        SELECT_DISH,
+        LOAD_RESTAURANTS,
+        LOAD_DISHES,
+        LOAD_RECIPES
 } from './types';
 
 //action to regiser user

@@ -6,7 +6,7 @@ const initialState = {
 }
 
 const getUserRestaReducer = (state=initialState, action) => {
-    if(action.type === LOAD_COMPONENT){
+    if(action.type === LOAD_RESTAURANTS){
         return {
             ...state,
             loading: true
