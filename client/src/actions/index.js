@@ -99,7 +99,7 @@ export const inputDish = (dishInfo) => dispatch => {
 export const getUserDishesAction = () => dispatch => {
 
     dispatch({
-        type: LOAD_COMPONENT
+        type: LOAD_DISHES
     });
 
     axios.get("/api/user/dishes")
