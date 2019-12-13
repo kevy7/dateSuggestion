@@ -1,4 +1,4 @@
-import { GET_RESTAURANTS, LOAD_COMPONENT } from '../actions/types';
+import { GET_RESTAURANTS, LOAD_COMPONENT, LOAD_RESTAURANTS } from '../actions/types';
 
 const initialState = {
     restaurants: [],
