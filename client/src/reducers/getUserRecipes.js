@@ -1,8 +1,9 @@
-import { GET_USER_RECIPES, LOAD_COMPONENT } from '../actions/types';
+import { GET_USER_RECIPES, LOAD_COMPONENT, LOAD_RECIPES } from '../actions/types';
 
 const initialState = {
     loading: false,
-    user_recipes: [] //Array of recipes will be returned and placed in here
+    user_recipes: [], //Array of recipes will be returned and placed in here
+    selectedRecipe: {}
 }
 
 const getUserRecipes = (state=initialState, action) => {
