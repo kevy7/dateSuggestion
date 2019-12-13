@@ -1,8 +1,9 @@
-import { GET_USER_DISHES, LOAD_COMPONENT } from '../actions/types';
+import { GET_USER_DISHES, LOAD_COMPONENT, LOAD_DISHES } from '../actions/types';
 
 const initialState = {
     loading: false,
-    userDishes: [] //Should be an array of dishes being returned to us
+    userDishes: [], //Should be an array of dishes being returned to us
+    selectedDish: ""
 }
 
 const getUserDishes = (state = initialState, action) => {
