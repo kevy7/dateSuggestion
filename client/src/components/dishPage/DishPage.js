@@ -18,7 +18,11 @@ class DishPage extends Component {
         //this.props.getRecipes(userDish);
 
         //look into ways to make this better
+        //This action will only be called if user_recipes is empty
         if(isEmpty(this.props.userRecipes.user_recipes) == true){
+
+            //Action is called here
+
             //this.props.getRecipes(userDish);
         }
     }
@@ -33,9 +37,9 @@ class DishPage extends Component {
     }
 
     render(){
-        /* if(this.props.userRecipes.loading === true) {
+        if(this.props.userRecipes.loading === true) {
             return <Spinner />
-        } */
+        }
         //console.log(this.props.userRecipes);
         return(
             <div className={styles.dishPage}>
