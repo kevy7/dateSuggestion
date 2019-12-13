@@ -179,9 +179,10 @@ export const selectRecipe = (selectedRecipe) => dispatch => {
 }
 
 export const getRestaurants = (userData) => dispatch => {
+
     dispatch({
-        type: LOAD_COMPONENT
-    })
+        type: LOAD_RESTAURANTS
+    });
 
     axios.get('/api/dishes/restaurants', {
         params: {
