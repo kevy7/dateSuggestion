@@ -8,7 +8,7 @@ import { combineReducers } from 'redux';
 import loginUser from './loginUser';
 import DishReducer from './DishReducer';
 import setCurrentError from './setCurrentError';
-import getUserRecipes from './getUserRecipes';
+import RecipeReducer from './RecipeReducer';
 //import selectedRecipe from './selectRecipe';
 import RestaurantsReducer from './RestaurantsReducer';
 
@@ -17,7 +17,7 @@ export default combineReducers({
     loginUser: loginUser,
     userDishes: DishReducer,
     errors: setCurrentError,
-    userRecipes: getUserRecipes,
+    userRecipes: RecipeReducer,
     //selectedRecipe: selectedRecipe,
     restaurants: RestaurantsReducer
 });
