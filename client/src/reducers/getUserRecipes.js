@@ -1,4 +1,4 @@
-import { GET_USER_RECIPES, SELECT_RECIPE, LOAD_COMPONENT, LOAD_RECIPES } from '../actions/types';
+import { GET_USER_RECIPES, SELECT_RECIPE, LOAD_RECIPES } from '../actions/types';
 
 const initialState = {
     loading: false,
