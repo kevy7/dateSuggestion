@@ -9,7 +9,6 @@ import loginUser from './loginUser';
 import DishReducer from './DishReducer';
 import setCurrentError from './setCurrentError';
 import RecipeReducer from './RecipeReducer';
-//import selectedRecipe from './selectRecipe';
 import RestaurantsReducer from './RestaurantsReducer';
 
 export default combineReducers({
@@ -18,6 +17,5 @@ export default combineReducers({
     userDishes: DishReducer,
     errors: setCurrentError,
     userRecipes: RecipeReducer,
-    //selectedRecipe: selectedRecipe,
     restaurants: RestaurantsReducer
 });
