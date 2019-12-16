@@ -5,10 +5,13 @@ import RestaurantsListContainer from './RestaurantsListContainer/RestaurantsList
 import RestaDescContainer from './RestaurantDescContainer/RestaDescContainer';
 
 const RestuarantsContainer = (state) => {
+
+    
+
     return (
         <div className="restuarantsContainer">
             <RestaurantsListContainer />
-            <Route exact path="/dishes/:id/restaurants/:restaurant" />
+            <Route exact path="/dishes/:id/restaurants/:restaurant" component={RestaDescContainer} />
         </div>
 
     )

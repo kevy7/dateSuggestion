@@ -1,8 +1,9 @@
-import { GET_RESTAURANTS, LOAD_RESTAURANTS } from '../actions/types';
+import { GET_RESTAURANTS, LOAD_RESTAURANTS, SELECT_RESTAURANT } from '../actions/types';
 
 const initialState = {
     restaurants: [],
-    loading: false
+    loading: false,
+    selectedRestaurant: {}
 }
 
 const getUserRestaReducer = (state=initialState, action) => {
@@ -17,6 +18,13 @@ const getUserRestaReducer = (state=initialState, action) => {
             ...state,
             loading: false,
             restaurants: action.payload
+        }
+    }
+    else if (action.type === SELECT_RESTAURANT){
+        return {
+            ...state,
+            loading: false,
+            selectedRestaurant: action.payload
         }
     }
     else {

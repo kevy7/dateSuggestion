@@ -9,7 +9,7 @@ class RestaDescContainer extends Component {
     render(){
         return (
             <div className="RestaDescContainer">
-
+                <p>Something should be shown here!!!</p>
             </div>
         )
     }

@@ -186,6 +186,7 @@ export const selectRecipe = (selectedRecipe) => dispatch => {
 
 }
 
+//Get list of restaurants from Yelp for the user
 export const getRestaurants = (userData) => dispatch => {
 
     dispatch({
@@ -213,4 +214,11 @@ export const getRestaurants = (userData) => dispatch => {
             payload: err
         })
     })
+}
+
+//Select a restaurant for the user
+export const selectRestaurant = (userData) => {
+
+    
+
 }
