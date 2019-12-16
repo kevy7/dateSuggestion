@@ -4,8 +4,11 @@ import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import styles from './RestaurantComponent.module.css';
-
+import { selectRestaurant } from '../../../../../../actions';
+ 
 class RestaurantComponent extends Component {
+
+    
 
     render(){
 
@@ -31,4 +34,12 @@ RestaurantComponent.propTypes = {
     isClosed: PropTypes.bool
 }
 
-export default withRouter(connect()(RestaurantComponent));
+const mapStateToProps = (state) => {
+    return {
+        restaurants: state.restaurants
+    }
+}
+
+export default withRouter(connect(mapStateToProps, {
+
+})(RestaurantComponent));
