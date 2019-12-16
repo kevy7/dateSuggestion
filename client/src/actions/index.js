@@ -77,7 +77,7 @@ export const loginUser = (userInfo, history) =>  dispatch => {
     });
 }
 
-//action used to input user's dish into the database
+//action used to input user's dish into the database 
 export const inputDish = (dishInfo) => dispatch => {
     //When we input a user's dish into the database, our server will return to us the user's list of dishes as well
     axios.post("/api/dish", dishInfo)

@@ -27,6 +27,7 @@ class RecipeComponents extends Component {
         const imageStyle = {
             backgroundImage: `url(${imageSrc})`
         } */
+        
         const url = "/dishes/" + this.props.match.params.id + "/Recipes/" + this.props.recipeName;
 
         return (

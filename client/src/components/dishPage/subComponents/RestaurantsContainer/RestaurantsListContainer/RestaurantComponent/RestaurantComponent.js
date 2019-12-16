@@ -7,10 +7,6 @@ import styles from './RestaurantComponent.module.css';
 
 class RestaurantComponent extends Component {
 
-    componentDidMount = () => {
-        
-    }
-
     render(){
 
         const url = "/dishes/" + this.props.match.params.id + "/Restaurants/" + this.props.restaName;
