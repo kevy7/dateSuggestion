@@ -217,8 +217,18 @@ export const getRestaurants = (userData) => dispatch => {
 }
 
 //Select a restaurant for the user
-export const selectRestaurant = (userData) => {
+export const selectRestaurant = (userData) => dispatch => {
 
-    
+    dispatch({
+        type: LOAD_RESTAURANTS
+    });
+
+    if(userData){
+        //if there is something in userData, then perform the following code below
+        dispatch({
+            type: SELECT_RESTAURANT,
+            payload: userData
+        });
+    }
 
 }
