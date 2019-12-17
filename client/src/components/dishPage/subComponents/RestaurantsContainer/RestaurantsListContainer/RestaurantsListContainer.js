@@ -47,7 +47,7 @@ class RestaurantsListContainer extends Component {
                         restaImage={resta.image_url}
                         restaName={resta.name}
                         url={resta.url}
-                        location={resta.location}
+                        restaLocation={resta.location}
                         isClosed={resta.is_closed}
                         key={resta.id}
                     />
