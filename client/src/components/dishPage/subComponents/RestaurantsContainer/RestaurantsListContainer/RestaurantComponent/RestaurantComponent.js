@@ -10,8 +10,6 @@ class RestaurantComponent extends Component {
 
     ClickMe = () => {
         
-        console.log(this.props.location);
-
         const selectedRestaurant = {
             restaName: this.props.restaName,
             url: this.props.url,
