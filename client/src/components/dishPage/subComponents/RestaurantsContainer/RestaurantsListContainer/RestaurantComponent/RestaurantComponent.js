@@ -24,8 +24,6 @@ class RestaurantComponent extends Component {
 
     render(){
 
-        //console.log(this.props.location)
-
         const url = "/dishes/" + this.props.match.params.id + "/Restaurants/" + this.props.restaName;
 
         return (
