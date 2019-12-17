@@ -8,7 +8,15 @@ import { selectRestaurant } from '../../../../../../actions';
  
 class RestaurantComponent extends Component {
 
-    
+    ClickMe = () => {
+        const selectedRestaurant = {
+            restaName: this.props.restaName
+        }
+
+        //Call action here
+        this.props.selectRestaurant(selectedRestaurant);
+    }
+
 
     render(){
 
@@ -41,5 +49,5 @@ const mapStateToProps = (state) => {
 }
 
 export default withRouter(connect(mapStateToProps, {
-
+    selectRestaurant: selectRestaurant
 })(RestaurantComponent));
