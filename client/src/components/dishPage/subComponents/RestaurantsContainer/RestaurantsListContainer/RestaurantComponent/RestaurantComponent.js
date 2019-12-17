@@ -15,7 +15,7 @@ class RestaurantComponent extends Component {
         const selectedRestaurant = {
             restaName: this.props.restaName,
             url: this.props.url,
-            location: this.props.location,
+            restaLocation: this.props.restaLocation,
             isClosed: this.props.isClosed
         }
 
@@ -45,7 +45,7 @@ RestaurantComponent.propTypes = {
     restaImage: PropTypes.string,
     restaName: PropTypes.string,
     url: PropTypes.string,
-    location: PropTypes.object, //PropTypes.object
+    restaLocation: PropTypes.object, //PropTypes.object
     isClosed: PropTypes.bool
 }
 
