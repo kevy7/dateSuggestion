@@ -9,6 +9,9 @@ import { selectRestaurant } from '../../../../../../actions';
 class RestaurantComponent extends Component {
 
     ClickMe = () => {
+        
+        console.log(this.props.location);
+
         const selectedRestaurant = {
             restaName: this.props.restaName,
             url: this.props.url,
@@ -23,11 +26,13 @@ class RestaurantComponent extends Component {
 
     render(){
 
+        //console.log(this.props.location)
+
         const url = "/dishes/" + this.props.match.params.id + "/Restaurants/" + this.props.restaName;
 
         return (
             <div className={styles.restaComponent}>
-                <Link to={url}>
+                <Link to={url} onClick={this.ClickMe}>
                     <img className={styles.restaImage} src={this.props.restaImage} />
                 </Link>
                 <p className={styles.restaTitle} onClick={this.ClickMe}>{this.props.restaName}</p>

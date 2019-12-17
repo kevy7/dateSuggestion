@@ -26,7 +26,7 @@ class RestaurantsListContainer extends Component {
             //console.log("this is being run");
 
 
-            //this.props.getRestaurants(userData);//The action call in here works!! we were able to retrieve the user's location
+            this.props.getRestaurants(userData);//The action call in here works!! we were able to retrieve the user's location
 
         }
 
@@ -41,12 +41,15 @@ class RestaurantsListContainer extends Component {
     render(){
 
         let restaurantList = this.props.restaurants.restaurants.map(resta => {
+
+            //console.log(resta.location);
             return <RestaurantComponent 
                         restaImage={resta.image_url}
                         restaName={resta.name}
                         url={resta.url}
                         location={resta.location}
                         isClosed={resta.is_closed}
+                        key={resta.id}
                     />
         });
 
@@ -56,13 +59,13 @@ class RestaurantsListContainer extends Component {
 
         return (
             <div className={styles.restaListContainer}>
-                <RestaurantComponent 
+                {/* <RestaurantComponent 
                     restaImage="https://images.unsplash.com/photo-1556745750-68295fefafc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
                     restaName="Placeholder restaurant"
                     url="https://www.yelp.com/biz/l%C3%BAc-l%C3%A1c-portland-3?adjust_creative=9b2KRCyVtggnEbq0iFPJlw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9b2KRCyVtggnEbq0iFPJlw"
                     location=""
                     isClosed={true}
-                />
+                /> */}
                 {restaurantList}
             </div>
         )
