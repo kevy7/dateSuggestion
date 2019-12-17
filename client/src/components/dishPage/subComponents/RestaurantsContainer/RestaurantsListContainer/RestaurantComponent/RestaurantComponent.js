@@ -10,7 +10,10 @@ class RestaurantComponent extends Component {
 
     ClickMe = () => {
         const selectedRestaurant = {
-            restaName: this.props.restaName
+            restaName: this.props.restaName,
+            url: this.props.url,
+            location: this.props.location,
+            isClosed: this.props.isClosed
         }
 
         //Call action here
@@ -27,8 +30,7 @@ class RestaurantComponent extends Component {
                 <Link to={url}>
                     <img className={styles.restaImage} src={this.props.restaImage} />
                 </Link>
-                <Link to={this.props.url}><p className={styles.restaTitle}>{this.props.restaName}</p></Link>
-                <p></p>
+                <p className={styles.restaTitle} onClick={this.ClickMe}>{this.props.restaName}</p>
             </div>
         )
     }
