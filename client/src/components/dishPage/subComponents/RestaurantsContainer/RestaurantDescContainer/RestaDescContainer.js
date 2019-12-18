@@ -5,6 +5,12 @@ import { connect } from 'react-redux';
 //Maybe import a component in here
 
 class RestaDescContainer extends Component {
+    /*
+        restaName: this.props.restaName,
+        url: this.props.url,
+        restaLocation: this.props.restaLocation,
+        isClosed: this.props.isClosed
+    */
 
     render(){
         return (
@@ -17,7 +23,7 @@ class RestaDescContainer extends Component {
                     <div className="card-body">
                         <h5 className="card-title"></h5>
 
-                        <h5 className="card-title">Restaurant</h5>
+                        <h5 className="card-title">{this.props.restaurants.selectedRestaurant.restaName}</h5>
 
                         <Link class="btn btn-primary">Link to source</Link>
                     </div>
@@ -34,6 +40,6 @@ const mapStateToProps = (state) => {
 }
 
 export default withRouter(connect(mapStateToProps, {
-    
+
 })(RestaDescContainer));
 
