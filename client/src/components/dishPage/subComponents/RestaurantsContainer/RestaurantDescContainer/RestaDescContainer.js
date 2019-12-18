@@ -25,7 +25,7 @@ class RestaDescContainer extends Component {
 
                         <h5 className="card-title">{this.props.restaurants.selectedRestaurant.restaName}</h5>
 
-                        <Link class="btn btn-primary">Link to source</Link>
+                        <Link to={this.props.restaurants.selectedRestaurant.url} class="btn btn-primary">Link to source</Link>
                     </div>
                 </div>
             </div>
