@@ -14,16 +14,6 @@ class RestaDescContainer extends Component {
 
     render(){
 
-        //Look this up
-        const displayCloseStatus;
-
-        if(this.props.restaurants.selectedRestaurant.isClosed === false){
-            displayCloseStatus = <p>Open</p>
-        }
-        else {
-            displayCloseStatus = <p>Close</p>
-        }
-
         return (
             <div className="RestaDescContainer">
                 <hr />
