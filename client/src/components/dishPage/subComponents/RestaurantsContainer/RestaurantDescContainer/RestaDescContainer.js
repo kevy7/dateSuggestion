@@ -10,6 +10,20 @@ class RestaDescContainer extends Component {
         return (
             <div className="RestaDescContainer">
                 <p>Something should be shown here!!!</p>
+
+                <hr />
+                <div className="card text-center">
+                    <div className="card-header">
+                        Description
+                    </div>
+                    <div className="card-body">
+                        <h5 className="card-title"></h5>
+
+                        <h5 className="card-title">Ingredients</h5>
+
+                        <Link class="btn btn-primary">Link to source</Link>
+                    </div>
+                </div>
             </div>
         )
     }
