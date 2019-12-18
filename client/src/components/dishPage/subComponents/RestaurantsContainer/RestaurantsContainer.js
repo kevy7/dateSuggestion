@@ -6,8 +6,6 @@ import RestaDescContainer from './RestaurantDescContainer/RestaDescContainer';
 
 const RestuarantsContainer = (state) => {
 
-    
-
     return (
         <div className="restuarantsContainer">
             <RestaurantsListContainer />
