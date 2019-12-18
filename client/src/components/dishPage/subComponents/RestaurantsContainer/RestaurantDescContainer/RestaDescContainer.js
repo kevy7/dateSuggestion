@@ -9,8 +9,6 @@ class RestaDescContainer extends Component {
     render(){
         return (
             <div className="RestaDescContainer">
-                <p>Something should be shown here!!!</p>
-
                 <hr />
                 <div className="card text-center">
                     <div className="card-header">
@@ -19,7 +17,7 @@ class RestaDescContainer extends Component {
                     <div className="card-body">
                         <h5 className="card-title"></h5>
 
-                        <h5 className="card-title">Ingredients</h5>
+                        <h5 className="card-title">Restaurant</h5>
 
                         <Link class="btn btn-primary">Link to source</Link>
                     </div>
@@ -29,5 +27,13 @@ class RestaDescContainer extends Component {
     }
 }
 
-export default RestaDescContainer;
+const mapStateToProps = (state) => {
+    return {
+        restaurants: state.restaurants
+    }
+}
+
+export default withRouter(connect(mapStateToProps, {
+    
+})(RestaDescContainer));
 
