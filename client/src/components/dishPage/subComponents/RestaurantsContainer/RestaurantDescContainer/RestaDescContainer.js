@@ -23,9 +23,9 @@ class RestaDescContainer extends Component {
             openStatus = <p>Open</p>;
         }
 
-        /* const displayAddress = this.props.restaurants.selectedRestaurant.restaLocation.display_address.map(address => {
+        const displayAddress = this.props.restaurants.selectedRestaurant.restaLocation.display_address.map(address => {
             return <p>{address}</p>
-        }) */
+        })
 
         console.log(this.props.restaurants.selectedRestaurant);
 
@@ -42,8 +42,7 @@ class RestaDescContainer extends Component {
                         {/* <h5 className="card-title"></h5> */}
 
                         <h5 className="card-title">{this.props.restaurants.selectedRestaurant.restaName}</h5>
-                        <h5 className="card-title">Address</h5>
-                        
+                        {displayAddress}
 
                         {openStatus}
 
