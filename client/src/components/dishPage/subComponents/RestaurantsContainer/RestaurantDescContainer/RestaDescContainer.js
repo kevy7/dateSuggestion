@@ -14,6 +14,15 @@ class RestaDescContainer extends Component {
 
     render(){
 
+        let openStatus;
+
+        if(this.props.restaurants.selectedRestaurant.isClosed === true ){
+            openStatus = <p>Closed</p>;
+        }
+        else {
+            openStatus = <p>Open</p>;
+        }
+
         return (
             <div className="RestaDescContainer">
                 <hr />
@@ -22,9 +31,10 @@ class RestaDescContainer extends Component {
                         Description
                     </div>
                     <div className="card-body">
-                        <h5 className="card-title"></h5>
+                        {/* <h5 className="card-title"></h5> */}
 
                         <h5 className="card-title">{this.props.restaurants.selectedRestaurant.restaName}</h5>
+                        {openStatus}
 
                         <Link to={this.props.restaurants.selectedRestaurant.url} class="btn btn-primary">Link to source</Link>
                     </div>
