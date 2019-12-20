@@ -219,6 +219,8 @@ router.get('/api/dishes/recipes', (req, res) => {
 
 
 //Add a delete route here to remove selected user dish from their list
+//This is the query used to delete a dish from the user's list
+/*DELETE from user_dish_selection where user_dish_selection_id = 2;*/
 
 
 module.exports = router;
