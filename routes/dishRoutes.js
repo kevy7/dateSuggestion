@@ -222,5 +222,12 @@ router.get('/api/dishes/recipes', (req, res) => {
 //This is the query used to delete a dish from the user's list
 /*DELETE from user_dish_selection where user_dish_selection_id = 2;*/
 
+//Route to Delete the user's dish from their list
+
+router.delete('/api/dishes/:id', (req, res) => {
+    //How to gain access to the id ---> req.params.id
+    
+})
+
 
 module.exports = router;
