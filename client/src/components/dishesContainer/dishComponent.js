@@ -18,10 +18,11 @@ class DishComponent extends Component {
 
         const linkButton = () => {
             let userDish = {
-
+                dish_name: this.props.dish_name,
+                user_dish_selection_id: this.props.user_dish_selection_id
             }
 
-            this.props.selectDish(this.props.dish_name);
+            this.props.selectDish(userDish);
         }
 
         return (
