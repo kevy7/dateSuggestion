@@ -17,6 +17,8 @@ class DishComponent extends Component {
         const url = "/dishes/" + this.props.dish_name + "/Recipes";
 
         const linkButton = () => {
+            
+
             this.props.selectDish(this.props.dish_name);
         }
 

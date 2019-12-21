@@ -3,7 +3,7 @@ import { GET_USER_DISHES, SELECT_DISH, LOAD_COMPONENT, LOAD_DISHES } from '../ac
 const initialState = {
     loading: false,
     userDishes: [], //Should be an array of dishes being returned to us
-    selectedDish: ""
+    selectedDish: {}
 }
 
 const getUserDishes = (state = initialState, action) => {
