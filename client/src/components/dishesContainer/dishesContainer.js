@@ -24,6 +24,7 @@ class DishesContainer extends Component {
                         dish_name={dish.dish_name}
                         dish_description={dish.dish_description}
                         user_dish_selection_id={dish.user_dish_selection_id}
+                        key={dish.user_dish_selection_id}
                     />
         });
 
