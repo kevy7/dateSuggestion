@@ -17,7 +17,9 @@ class DishComponent extends Component {
         const url = "/dishes/" + this.props.dish_name + "/Recipes";
 
         const linkButton = () => {
-            
+            let userDish = {
+
+            }
 
             this.props.selectDish(this.props.dish_name);
         }
@@ -40,7 +42,8 @@ class DishComponent extends Component {
 //Below, are our two props that is expected to be passed down below
 DishComponent.propTypes = { //propTypes are lowercased when declaring within your component
     dish_name: PropTypes.string,
-    dish_description: PropTypes.string
+    dish_description: PropTypes.string,
+    user_dish_selection_id: PropTypes.number
 }
 
 const mapStateToProps = (state) => {

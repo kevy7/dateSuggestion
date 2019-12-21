@@ -23,6 +23,7 @@ class DishesContainer extends Component {
             return <DishComponent 
                         dish_name={dish.dish_name}
                         dish_description={dish.dish_description}
+                        user_dish_selection_id={dish.user_dish_selection_id}
                     />
         });
 
