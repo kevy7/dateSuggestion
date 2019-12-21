@@ -1,4 +1,4 @@
-import { GET_USER_DISHES, SELECT_DISH, LOAD_COMPONENT, LOAD_DISHES } from '../actions/types';
+import { GET_USER_DISHES, SELECT_DISH, LOAD_DISHES } from '../actions/types';
 
 const initialState = {
     loading: false,
