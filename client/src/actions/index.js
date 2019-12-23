@@ -133,6 +133,14 @@ export const selectDish = (userDish) => dispatch => {
 
 }
 
+//Action used to delete a dish from the user's list of selected dishes
+export const deleteDish = (dishID) => {
+
+    //We don't need to dispatch data here since we're only trying to remove something from the database
+    
+}
+
+
 //Action used to get a list of recipes via the edamam api
 export const getRecipes = (userDishes) => dispatch => {
 
