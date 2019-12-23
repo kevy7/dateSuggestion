@@ -228,6 +228,8 @@ router.delete('/api/dishes/:id', (req, res) => {
     //How to gain access to the id ---> req.params.id
     //Learn how to pass data via the body with a delete route
 
+    console.log("This backend route works!!!");
+
     /* pool.query("DELETE from user_dish_selection where user_dish_selection_id = $1", [req.params.id], (err, result) => {
         if(err){
             res.send(err);
@@ -236,6 +238,8 @@ router.delete('/api/dishes/:id', (req, res) => {
             //If successful, the item will be removed from the database
         }
     }); */
+
+
 })
 
 
