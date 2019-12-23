@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import styles from './DishComponent.module.css';
-import { selectDish } from '../../actions/index';
+import { selectDish, deleteDish } from '../../actions/index';
 
 class DishComponent extends Component {
     render(){
@@ -54,5 +54,6 @@ const mapStateToProps = (state) => {
 }
 
 export default withRouter(connect(mapStateToProps, {
-    selectDish: selectDish
+    selectDish: selectDish,
+    deleteDish: deleteDish
 })(DishComponent));

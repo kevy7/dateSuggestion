@@ -11,10 +11,12 @@ import { LOGIN_USER,
         SELECT_RESTAURANT,
         GET_RESTAURANTS,
         SELECT_DISH,
+        DELETE_DISH,
         LOAD_RESTAURANTS,
         LOAD_DISHES,
         LOAD_RECIPES
 } from './types';
+import { isRegExp } from 'util';
 
 //action to regiser user
 export const registerUser = (userInfo, history) => dispatch => {
@@ -134,10 +136,23 @@ export const selectDish = (userDish) => dispatch => {
 }
 
 //Action used to delete a dish from the user's list of selected dishes
-export const deleteDish = (dishID) => {
+export const deleteDish = (dishID) => dispatch => {
 
-    //We don't need to dispatch data here since we're only trying to remove something from the database
+    let url = "/api/dishes/" + dishID;
     
+    //We don't need to dispatch data here since we're only trying to remove something from the database
+    //axios delete request here
+    axios.delete(url)
+    .then(response => {
+
+    })
+    .catch(err => {
+        dispatch({
+            type: SET_CURRENT_ERROR,
+            payload: err
+        });
+    });
+
 }
 
 
