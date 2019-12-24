@@ -25,10 +25,14 @@ class DishComponent extends Component {
             this.props.selectDish(userDish);
         }
 
+        const closeButton = () => {
+            this.props.deleteDish(this.props.user_dish_selection_id);
+        }
+
         return (
             <div className={styles.dishComponent}>
                 <div className="card" style={style} /*className={styles.card}*/ >
-                        <div className={styles.closeButton}>
+                        <div className={styles.closeButton} onClick={closeButton}>
                             <button type="button" class="close" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
