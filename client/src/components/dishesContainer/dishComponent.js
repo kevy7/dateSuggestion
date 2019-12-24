@@ -28,7 +28,7 @@ class DishComponent extends Component {
         return (
             <div className={styles.dishComponent}>
                 <div className="card" style={style} /*className={styles.card}*/ >
-                        <div>
+                        <div className={styles.closeButton}>
                             <button type="button" class="close" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
