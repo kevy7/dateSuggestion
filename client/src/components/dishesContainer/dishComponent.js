@@ -31,14 +31,11 @@ class DishComponent extends Component {
             let confirmation = window.confirm("Are you sue you want to remove this dish from your list?");
 
             if(confirmation === true){
-                console.log("You clicked yes");
+                this.props.deleteDish(this.props.user_dish_selection_id);
             }
             else {
                 console.log("You clicked no");
             }
-            
-
-            //this.props.deleteDish(this.props.user_dish_selection_id);
         }
 
         return (
