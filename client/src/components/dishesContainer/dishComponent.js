@@ -26,7 +26,19 @@ class DishComponent extends Component {
         }
 
         const closeButton = () => {
-            this.props.deleteDish(this.props.user_dish_selection_id);
+
+            //Item should only be removed from user's list as long as they clicked okay with the confirm button
+            let confirmation = window.confirm("Are you sue you want to remove this dish from your list?");
+
+            if(confirmation === true){
+                console.log("You clicked yes");
+            }
+            else {
+                console.log("You clicked no");
+            }
+            
+
+            //this.props.deleteDish(this.props.user_dish_selection_id);
         }
 
         return (
