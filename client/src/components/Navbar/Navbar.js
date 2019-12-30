@@ -18,9 +18,6 @@ const Navbar = () => {
                     <Link className="nav-item nav-link" to="/register">Register</Link>
                     </div>
                 </div>
-                
-
-
             </nav>
         </div>
     )
