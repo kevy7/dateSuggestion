@@ -2,7 +2,8 @@ import { LOGIN_USER, LOAD_COMPONENT } from "../actions/types";
 
 const initalState = {
     loading: false,
-    loggedInUser: {}
+    loggedInUser: {},
+    isLoggedIn: false
 }
 
 const loginUser = (state = initalState, action) => {
@@ -10,7 +11,8 @@ const loginUser = (state = initalState, action) => {
         return {
             ...state,
             loading: false,
-            loggedInUser: action.payload
+            loggedInUser: action.payload,
+            isLoggedIn: true
         }
     }
     else if (action.type === LOAD_COMPONENT){
@@ -21,7 +23,8 @@ const loginUser = (state = initalState, action) => {
     }
     else {
         return {
-            ...state
+            ...state,
+            isLoggedIn: false
         }
     }
 }
