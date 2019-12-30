@@ -4,6 +4,8 @@ import { Route } from 'react-router-dom';
 import RecipeListContainer from './RecipeListContainer/RecipeListContainer';
 import RecipeDescContainer from './RecipeDescriptionContainer/RecipeDescContainer';
 
+//the getRecipes action is going to be called here
+
 class RecipeContainer extends Component {
     render(){
         return (
