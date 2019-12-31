@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Navbar.module.css';
 import { withRouter, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 const Navbar = () => {
     return (
