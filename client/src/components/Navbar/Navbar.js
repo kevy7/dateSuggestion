@@ -27,4 +27,12 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar;
+const mapStatToProps = (state) => {
+    return {
+
+    }
+}
+
+export default withRouter(connect(mapStatToProps, {
+    //Add actions in here
+})(Navbar));
