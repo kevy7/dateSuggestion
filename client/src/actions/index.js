@@ -79,6 +79,20 @@ export const loginUser = (userInfo, history) =>  dispatch => {
     });
 }
 
+//Action created to logout user
+export const logoutUser = () => dispatch => {
+    axios.post("/api/logout")
+    .then(response => {
+        //Nothing will be returned
+    })
+    .catch(error => {
+        dispatch({
+            type: SET_CURRENT_ERROR,
+            payload: error
+        });
+    });
+}
+
 //action used to input user's dish into the database 
 export const inputDish = (dishInfo) => dispatch => {
     //When we input a user's dish into the database, our server will return to us the user's list of dishes as well

@@ -6,6 +6,9 @@ import { connect } from 'react-redux';
 class Navbar extends Component {
 
     render(){
+
+        
+
         return (
             <div className={styles.navbar}>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
