@@ -23,8 +23,7 @@ const loginUser = (state = initalState, action) => {
     }
     else {
         return {
-            ...state,
-            isLoggedIn: false
+            ...state
         }
     }
 }
