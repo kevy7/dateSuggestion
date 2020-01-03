@@ -7,15 +7,15 @@ class Navbar extends Component {
 
     render(){
 
-        let LoginorLogout;
-        let RegisterElement;
+        let loginOrLogout;
+        let registerElement;
 
         if(this.props.loginUser.isLoggedIn === true){
-            LoginorLogout = <span href="" className="nav-item nav-link">Logout</span>
+            loginOrLogout = <span href="" className="nav-item nav-link">Logout</span>
         }
         else {
-            LoginorLogout = <Link className="nav-item nav-link" to="/login">Login</Link>
-            RegisterElement = <Link className="nav-item nav-link" to="/register">Register</Link>
+            loginOrLogout = <Link className="nav-item nav-link" to="/login">Login</Link>
+            registerElement = <Link className="nav-item nav-link" to="/register">Register</Link>
         }
 
         return (
@@ -30,8 +30,8 @@ class Navbar extends Component {
                         <Link className="nav-item nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
                         <Link className="nav-item nav-link" to="/dishes">Dishes</Link>
                         {/* <Link className="nav-item nav-link" to="/login">Login</Link> */}
-                        {LoginorLogout}
-                        {RegisterElement}
+                        {loginOrLogout}
+                        {registerElement}
                         {/* <Link className="nav-item nav-link" to="/register">Register</Link> */}
                         </div>
                     </div>
