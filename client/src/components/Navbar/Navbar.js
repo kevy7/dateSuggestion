@@ -7,7 +7,14 @@ class Navbar extends Component {
 
     render(){
 
-        
+        let LoginorLogout;
+
+        if(this.props.loginUser.isLoggedIn === true){
+            LoginorLogout = <span className="nav-item nav-link">Logout</span>
+        }
+        else {
+            LoginorLogout = <Link className="nav-item nav-link" to="/login">Login</Link>
+        }
 
         return (
             <div className={styles.navbar}>
