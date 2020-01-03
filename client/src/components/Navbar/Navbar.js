@@ -10,7 +10,7 @@ class Navbar extends Component {
         let LoginorLogout;
 
         if(this.props.loginUser.isLoggedIn === true){
-            LoginorLogout = <span className="nav-item nav-link">Logout</span>
+            LoginorLogout = <span href="" className="nav-item nav-link">Logout</span>
         }
         else {
             LoginorLogout = <Link className="nav-item nav-link" to="/login">Login</Link>
@@ -28,6 +28,7 @@ class Navbar extends Component {
                         <Link className="nav-item nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
                         <Link className="nav-item nav-link" to="/dishes">Dishes</Link>
                         {/* <Link className="nav-item nav-link" to="/login">Login</Link> */}
+                        {LoginorLogout}
                         <Link className="nav-item nav-link" to="/register">Register</Link>
                         </div>
                     </div>
