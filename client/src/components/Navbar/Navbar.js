@@ -8,12 +8,14 @@ class Navbar extends Component {
     render(){
 
         let LoginorLogout;
+        let RegisterElement;
 
         if(this.props.loginUser.isLoggedIn === true){
             LoginorLogout = <span href="" className="nav-item nav-link">Logout</span>
         }
         else {
             LoginorLogout = <Link className="nav-item nav-link" to="/login">Login</Link>
+            RegisterElement = <Link className="nav-item nav-link" to="/register">Register</Link>
         }
 
         return (
@@ -29,7 +31,8 @@ class Navbar extends Component {
                         <Link className="nav-item nav-link" to="/dishes">Dishes</Link>
                         {/* <Link className="nav-item nav-link" to="/login">Login</Link> */}
                         {LoginorLogout}
-                        <Link className="nav-item nav-link" to="/register">Register</Link>
+                        {RegisterElement}
+                        {/* <Link className="nav-item nav-link" to="/register">Register</Link> */}
                         </div>
                     </div>
                 </nav>
