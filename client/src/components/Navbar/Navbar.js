@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './Navbar.module.css';
 import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { logoutUser } from '../../actions/index';
 
 class Navbar extends Component {
 
@@ -49,4 +50,5 @@ const mapStatToProps = (state) => {
 
 export default withRouter(connect(mapStatToProps, {
     //Add actions in here
+    logoutUser: logoutUser
 })(Navbar));
