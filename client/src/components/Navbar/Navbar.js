@@ -12,7 +12,7 @@ class Navbar extends Component {
         let registerElement;
 
         if(this.props.loginUser.isLoggedIn === true){
-            loginOrLogout = <span href="" className="nav-item nav-link">Logout</span>
+            loginOrLogout = <span onClick={this.props.logoutUser} href="" className="nav-item nav-link">Logout</span>
         }
         else {
             loginOrLogout = <Link className="nav-item nav-link" to="/login">Login</Link>
