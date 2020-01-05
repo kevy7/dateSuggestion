@@ -3,6 +3,7 @@ import axios from 'axios';
 
 
 import { LOGIN_USER,
+        LOGOUT_USER,
         SET_CURRENT_ERROR,
         LOAD_COMPONENT,
         GET_USER_DISHES,
