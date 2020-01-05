@@ -1,4 +1,4 @@
-import { LOGIN_USER, LOAD_COMPONENT } from "../actions/types";
+import { LOGIN_USER, LOGOUT_USER, LOAD_COMPONENT } from "../actions/types";
 
 const initalState = {
     loading: false,
