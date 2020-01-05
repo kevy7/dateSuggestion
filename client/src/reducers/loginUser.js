@@ -15,6 +15,14 @@ const loginUser = (state = initalState, action) => {
             isLoggedIn: true
         }
     }
+    else if(action.type === LOGOUT_USER){
+        return {
+            ...state,
+            loading: false,
+            loggedInUser: {},
+            isLoggedIn: false
+        }
+    }
     else if (action.type === LOAD_COMPONENT){
         return {
             ...state,
