@@ -85,7 +85,6 @@ export const logoutUser = () => dispatch => {
     axios.post("/api/logout")
     .then(response => {
         //Nothing will be returned
-        //No data needs to be passed in for this action type
         dispatch({
             type: LOGOUT_USER
         });
