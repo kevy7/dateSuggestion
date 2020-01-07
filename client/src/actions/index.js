@@ -84,7 +84,6 @@ export const loginUser = (userInfo, history) =>  dispatch => {
 export const logoutUser = () => dispatch => {
     axios.post("/api/logout")
     .then(response => {
-        //Nothing will be returned
         dispatch({
             type: LOGOUT_USER
         });
