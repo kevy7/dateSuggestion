@@ -96,6 +96,7 @@ app.get("/poop", (req, res) => {
 })
 
 
+//Added this 01/12/20
 //check to see if we're on heroku
 if(process.env.NODE_ENV === 'production') {
     //Basically, if we're in production then run the code below
