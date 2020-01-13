@@ -100,7 +100,7 @@ app.get("/poop", (req, res) => {
 //check to see if we're on heroku
 if(process.env.NODE_ENV === 'production') {
     //Basically, if we're in production then run the code below
-    app.use(express.static('client/build'));
+    app.use(express.static('./client/build'));
 
     //For any routes that gets hit here, we're going to load the react index.html file
     app.get('*', (req, res) => {
