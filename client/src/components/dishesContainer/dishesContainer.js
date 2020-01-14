@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import { getUserDishesAction } from '../../actions/index';
-import DishComponent from './DishComponent';
+import DishComponent from './dishComponent';
 import NewDishComponent from './NewDishComponent';
 import styles from './DishesContainer.module.css';
 import DishNavbar from './DishNavbar';
