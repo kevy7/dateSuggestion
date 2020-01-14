@@ -75,3 +75,6 @@ export default withRouter(connect(mapStateToProps, {
     selectDish: selectDish,
     deleteDish: deleteDish
 })(DishComponent));
+
+
+//Added comment
